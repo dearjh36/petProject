@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.ProductMapper">
+	<select id = "productList" parameterType="string" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from cate_view
+		where catecode = #{catecode}
+	]]>
+	</select>
+</mapper>

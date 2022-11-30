@@ -1,0 +1,5 @@
+
+11월 30, 2022 16:17:00.222 NEW SESSION
+11월 30, 2022 16:17:00.222 [4748:3580:1130/161700.220:ERROR:device_event_log_impl.cc(215)] [16:17:00.219] USB: usb_device_handle_win.cc:1048 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+11월 30, 2022 16:17:22.93 [4748:3960:1130/161722.093:ERROR:util.cc(129)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+11월 30, 2022 17:46:13.757 [4748:3580:1130/174613.750:ERROR:interface_endpoint_client.cc(690)] Message 1 rejected by interface blink.mojom.WidgetHost

@@ -1,0 +1,8 @@
+package com.pet.dao;
+
+public interface CategoryDao {
+
+	// 카테고리 목록
+		public List<CategoryVO> categoryList() throws Exception;
+	
+}

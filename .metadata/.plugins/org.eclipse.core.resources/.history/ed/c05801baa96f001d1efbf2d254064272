@@ -1,0 +1,13 @@
+package com.pet.controller;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Controller;
+
+import com.pet.service.CategoryService;
+
+@Controller
+public class CategoryController {
+	@Inject 
+	private CategoryService categoryService;
+}

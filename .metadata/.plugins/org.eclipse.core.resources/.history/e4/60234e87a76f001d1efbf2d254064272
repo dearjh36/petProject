@@ -1,0 +1,7 @@
+package com.pet.service;
+
+public interface CategoryService {
+	
+	
+
+}

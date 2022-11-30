@@ -1,0 +1,22 @@
+package com.pet.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import com.pet.dao.ProductDao;
+import com.pet.model.ProductVO;
+
+public class ProductServiceImpl implements ProductService{
+	
+	@Inject
+	private ProductDao dao;
+
+	// 상품 목록
+	@Override
+	public List<ProductVO> productList() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
