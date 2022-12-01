@@ -24,6 +24,11 @@ public class MemberController {
 	private MemberService mService;
 
 	// 회원가입 GET
+	@RequestMapping(value = "/contract", method = RequestMethod.GET)
+	public void getJoinContract() throws Exception {
+	}
+	
+	// 회원가입 GET
 	@RequestMapping(value = "/join", method = RequestMethod.GET)
 	public void getJoin() throws Exception {
 		logger.info("get 회원가입");
@@ -37,8 +42,13 @@ public class MemberController {
 
 		mService.mJoin(memVO);
 
-		
-		return "redirect:/index";
+		return "redirect:/member/joinSuccess";
+	}
+
+	// 회원가입 성공
+	@RequestMapping(value = "/joinSuccess", method = RequestMethod.GET)
+	public void getJoinSuccess() throws Exception {
+		logger.info("회원가입 성공");
 	}
 
 	// 로그인 GET
@@ -57,13 +67,19 @@ public class MemberController {
 
 		if (login != null) {
 			session.setAttribute("member", login);
+
+			if (login.getId().equals("admin")) {
+				session.setAttribute("member", login);
+				return "redirect:/admin/product/productList";
+			} else {
+				return "redirect:/";
+			}
 		} else {
 			session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
 			return "redirect:/member/login";
 		}
 
-		return "redirect:/index";
 	}
 
 	// 로그아웃
@@ -74,7 +90,7 @@ public class MemberController {
 
 		mService.mLogout(session);
 
-		return "redirect:/index";
+		return "redirect:/";
 
 	}
 

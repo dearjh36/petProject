@@ -14,6 +14,14 @@
 	]]>
 	</select>
 	
+	<!-- 전체 상품 목록 -->
+	<select id = "productAllList" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from product
+	]]>
+	</select>
+	
 	<!-- 상품 상세보기 -->
 	<select id = "productView" parameterType="String" resultType = "com.pet.model.ProductVO">
 	<![CDATA[
@@ -31,5 +39,13 @@
 		where catename = #{catename} and kind = #{kind}
 	]]>
 	</select>
+	
+	<!-- 상품 갯수 -->
+	<select id = "countProduct" resultType = "int">
+	<![CDATA[
+		select count(pNum) 
+		from product
+	]]>
+	</select>s
 	
 </mapper>

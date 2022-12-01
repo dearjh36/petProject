@@ -13,7 +13,7 @@ public class MemberDaoImpl implements MemberDao {
 	@Inject
 	private SqlSession sqlsession;
 	
-	private static String namespace = "com.won.mapper.MemberMapper";
+	private static String namespace = "com.pet.mapper.MemberMapper";
 
 	// 회원 가입
 	@Override

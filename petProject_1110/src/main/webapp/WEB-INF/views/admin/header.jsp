@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>Mypet Admin</title>
 <link rel="stylesheet" href="/resources/admin/css/admin.css">
-<script type="text/javascript" src="/resources/admin/product/product.js"></script>
+<script type="text/javascript" src="/resources/admin/product.js"></script>
 </head>
 <body>
 	<div id="wrap">

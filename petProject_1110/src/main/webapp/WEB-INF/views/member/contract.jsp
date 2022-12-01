@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<script type="text/javascript" src="member/member.js"></script>
+<script type="text/javascript" src="/resources/member.js"></script>
 <article>
 	<h2>회원가입</h2>
 	<p></p>
-	<form id="join" action="MypetServlet?command=join_form" method="post" name="formm">
+	<form id="join" action="/member/join" method="get" name="formm">
 		언제나 새로운 즐거움이 가득한  웰컴펫의 회원가입 페이지 입니다. <br>
 		웰컴펫의 회원가입은 무료이며, <br>
 		회원님의 개인신상에 관한 정보는 ‘정보통신망이용촉진 및 정보보호등에관한법률’에 의해 <br>

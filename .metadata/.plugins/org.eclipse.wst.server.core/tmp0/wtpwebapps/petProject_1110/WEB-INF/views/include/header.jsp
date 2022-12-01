@@ -23,14 +23,14 @@ function go_search() {
 			<div id="catagory_menu">
 				<ul class="right_menu">
 					<c:choose>
-						<c:when test="${empty sessionScope.loginUser}">
+						<c:when test="${empty sessionScope.member}">
 							<li><a href="/member/login">로그인</a></li>
 
-							<li><a href="/member/join">회원가입</a></li>
+							<li><a href="/member/contract">회원가입</a></li>
 						</c:when>
 						<c:otherwise>
 							<li style="color: orange; transform:translateY(-10px)">
-								${sessionScope.loginUser.name}님(${sessionScope.loginUser.ID})</li>
+								${sessionScope.member.name}님(${sessionScope.member.id})</li>
 							<li><a href="/member/logout">로그아웃</a></li>
 						</c:otherwise>
 					</c:choose>
@@ -42,7 +42,7 @@ function go_search() {
 			</div>
 			
 			<div id="logo">
-				<a href="MypetServlet?command=index"> 
+				<a href="/"> 
 				<img src="/resources/images/logo.jpg">
 				</a>
 			</div>
@@ -59,12 +59,12 @@ function go_search() {
 
 			<div class="aa">
 				<div class="top_box">
-					<a href="MypetServlet?command=dog" class="dog_box">강아지</a> 
-					<a href="MypetServlet?command=cat" class="cat_box">고양이</a>
+					<a href="/dog_main" class="dog_box">강아지</a> 
+					<a href="/cat_main" class="cat_box">고양이</a>
 				</div>
 				<div class="bottom_box">
-					<a href="MypetServlet?command=bird" class="bird_box">조류</a> 
-					<a href="MypetServlet?command=rep" class="rep_box">파충류</a>
+					<a href="/bird_main" class="bird_box">조류</a> 
+					<a href="/rep_main" class="rep_box">파충류</a>
 				</div>
 			</div>
 

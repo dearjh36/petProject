@@ -1,25 +1,19 @@
 package com.pet.model;
 
 public class MemberVO {
-	private String ID;		
+	private String id;
 	private String password;
-	private String name; 	
+	private String name;
 	private String birthday;
-	private String phone; 	
-	private String address; 
-	private String Email;
+	private String phone;
+	private String address;
+	private String email;
 	private String cateName;
-	public String getCateName() {
-		return cateName;
+	public String getId() {
+		return id;
 	}
-	public void setCateName(String cateName) {
-		this.cateName = cateName;
-	}
-	public String getID() {
-		return ID;
-	}
-	public void setID(String iD) {
-		ID = iD;
+	public void setId(String id) {
+		this.id = id;
 	}
 	public String getPassword() {
 		return password;
@@ -52,16 +46,23 @@ public class MemberVO {
 		this.address = address;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
-	@Override
-	public String toString() {
-		return "Join_UserVO [ID=" + ID + ", password=" + password + ", name=" + name + ", birthday=" + birthday
-				+ ", phone=" + phone + ", address=" + address + ", Email=" + Email + ", cateName=" + cateName + "]";
+	public String getCateName() {
+		return cateName;
+	}
+	public void setCateName(String cateName) {
+		this.cateName = cateName;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", birthday=" + birthday
+				+ ", phone=" + phone + ", address=" + address + ", email=" + email + ", cateName=" + cateName + "]";
+	}
 	
 }

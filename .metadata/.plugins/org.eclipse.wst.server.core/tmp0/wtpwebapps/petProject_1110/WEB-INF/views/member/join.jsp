@@ -2,9 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
 <script type="text/javascript" src="/resources/member.js"></script>
-<script>
 
-</script>
 <article>
 	<h2>회원가입</h2>
 	<form  method="post" name="formm">
@@ -12,7 +10,7 @@
 			<table id="join_table">
 				<tr>
 					<th>아이디</th>
-					<td><input type="text" name="id" size="12"></td>
+					<td><input type="text" name="id" id="id" size="12"></td>
 					<td><input type="hidden" name="reid">
 					   <!--  <input type="button" value="중복 체크" onclick="idcheck()" id="overlap"
 					        style="width:80px; height:35px;"></td> -->

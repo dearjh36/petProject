@@ -27,7 +27,7 @@
 						<th style="display: none;">none</th>
 					</c:when>
 					<c:otherwise>
-						<th><a href="/${cateList.cateName}_main?cateName=${cateList.cateName}">
+						<th><a href="/${cateList.cateName}_main">
 								<img src="/resources/images/category/${cateList.cateName}_index.JPG" />
 						</a></th>
 					</c:otherwise>

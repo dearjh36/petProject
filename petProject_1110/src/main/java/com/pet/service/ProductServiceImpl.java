@@ -23,6 +23,15 @@ public class ProductServiceImpl implements ProductService {
 		return result;
 		
 	}
+	
+	// 전체 상품 목록
+	@Override
+	public List<ProductVO> productAllList() throws Exception {
+
+		List<ProductVO> result = dao.productAllList();
+		return result;
+				
+	}
 
 	// 상품 상세보기
 	@Override
@@ -41,5 +50,12 @@ public class ProductServiceImpl implements ProductService {
 		return result;
 		
 	}
+
+	// 상품 갯수
+	@Override
+	public int countProduct() throws Exception {
+		return dao.countProduct();
+	}
+
 
 }

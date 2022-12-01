@@ -29,9 +29,9 @@ public class CategoryController {
 	
 	// 1. 강아지 메인 페이지
 	@RequestMapping(value = "/dog_main", method = RequestMethod.GET)
-	public void getDogMain(@RequestParam("cateName") String cateName, Model model) throws Exception{
+	public void getDogMain(Model model) throws Exception{
 		
-		List<ProductVO> pList = pService.productList(cateName);
+		List<ProductVO> pList = pService.productList("dog");
 		model.addAttribute("ProductList",pList);
 		
 		logger.info("Dog 메인 페이지");

@@ -15,10 +15,6 @@ function go_detail(tpage, pNum) {
 }
 </script>
 
-
-
-
-
 <article>
 <form name="frm" method="post">
  

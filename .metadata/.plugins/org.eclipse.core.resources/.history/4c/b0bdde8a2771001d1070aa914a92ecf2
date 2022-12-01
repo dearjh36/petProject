@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+  pageEncoding="UTF-8"%>  
+<%@ include file="../include/header.jsp" %>  
+<script>
+function check() {
+	  if (document.formm.id.value == "") {
+	    alert('아이디를 입력하여 주십시오.');
+	    document.login_frm.id.focus();
+	    return;
+	  }
+	  var url = "MypetServlet?command=id_check_form&id=" 
+	+ document.formm.id.value;
+	  window.open( url, "_blank_1",
+	"toolbar=no, menubar=no, scrollbars=yes, resizable=no, width=330, height=200");
+}
+</script>
+  <article>
+    <h2>로그인</h2>
+    <form method="post" action="/member/login" name="login_frm">
+        <fieldset id="login_field">
+        <legend></legend>
+          <input name="id" type="text" value="${id}" placeholder="아이디"><br> 
+          <input name="pwd" type="password" placeholder="비밀번호"><br> 
+        </fieldset>
+        <div class="clear"></div>
+        <div>
+            <input type="button" value="로그인" onclick="check()" id="login_btn">
+            <input type="button" value="회원가입" onclick="/member/contract" id="cons_btn">
+        </div>
+    </form>  
+  </article>
+<%@ include file="../include/footer.jsp" %>      

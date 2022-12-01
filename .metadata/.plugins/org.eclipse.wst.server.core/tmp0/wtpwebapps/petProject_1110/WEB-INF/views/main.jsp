@@ -27,8 +27,8 @@
 						<th style="display: none;">none</th>
 					</c:when>
 					<c:otherwise>
-						<th><a href="MypetServlet?command=${categoryVO.cateName}">
-								<img src="images/category/${categoryVO.cateName}_index.JPG" />
+						<th><a href="/${cateList.cateName}_main">
+								<img src="/resources/images/category/${categoryVO.cateName}_index.JPG" />
 						</a></th>
 					</c:otherwise>
 				</c:choose>

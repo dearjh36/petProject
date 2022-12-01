@@ -4,13 +4,13 @@
 <%@ include file="include/navi_rep.jsp"%>
 <style>
 html, body {
-	cursor: url(images/repcur.cur), auto;
+	cursor: url(/resources/images/repcur.cur), auto;
 }
 #front {
-	cursor: url(images/repcur.cur), auto;
+	cursor: url(/resources/images/repcur.cur), auto;
 }
 a:hover {
-	cursor: url(images/repcur_over.cur), auto;
+	cursor: url(/resources/images/repcur_over.cur), auto;
 }
 </style>
 
@@ -18,7 +18,7 @@ a:hover {
 <!--메인 이미지 들어가는 곳 시작 --->
 <div id="wrap" style="transform:translateY(-160px)">
 	<div id="main_img">
-		<img src="images/rep_main.jpg">
+		<img src="/resources/images/rep_main.jpg">
 	</div>
 </div>
 <!--메인 이미지 들어가는 곳 끝--->

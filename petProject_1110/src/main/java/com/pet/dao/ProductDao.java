@@ -9,10 +9,17 @@ public interface ProductDao {
 	// 상품 목록
 	public List<ProductVO> productList(String cateName) throws Exception;
 	
+	// 전체 상품 목록
+	public List<ProductVO> productAllList() throws Exception;
+	
 	// 상품 상세보기
 	public ProductVO productView(int pNum) throws Exception;
 	
 	// 종류별 상품 목록
 	public List<ProductVO> productKindList(String cateName, String kind) throws Exception;
+	
+	// 상품 갯수
+	public int countProduct() throws Exception;
+	
 	
 }

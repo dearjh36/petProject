@@ -31,26 +31,27 @@ function admin_check()
 		<div class="main-wrap">
 			<header>
 			<div class="logo-wrap">
-				<a href="MypetServlet?command=index"><img
+				<a href="/"><img
 					src="/resources/images/admin_logo.png"></a>
 			</div>
 
 			</header>
 			<section class="login-input-section-wrap">
-			<form name="frm" method="post"
-				action="MypetServlet?command=admin_login">
+			<form name="frm" method="post" action="/admin/main">
 				<div class="login-input-wrap">
-					<input type="text" placeholder="아이디" name="adminid"></input>
+					<input type="text" placeholder="아이디" name="id"></input>
 				</div>
 				<div class="login-input-wrap password-wrap">
-					<input placeholder="비밀번호" type="password" name="adminpw"></input>
+					<input placeholder="비밀번호" type="password" name="password"></input>
 				</div>
 
 				<div class="login-button-wrap">
 					<button>관리자 로그인</button>
 					<br>
 					<br>
-					<h4 style="color: red">${message}</h4>
+					<c:if test="${msg == false}">
+						<p style="color:#f00;">로그인에 실패했습니다.</p>
+					</c:if>
 			</form>
 		</div>
 
