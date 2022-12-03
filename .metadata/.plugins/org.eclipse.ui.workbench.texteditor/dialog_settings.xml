@@ -6,32 +6,33 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="id"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
-			<item value="id"/>
-			<item value="reg"/>
-			<item value="phone"/>
-			<item value="password"/>
-			<item value="navi"/>
-			<item value="product_kind"/>
-			<item value="ProductKindAction"/>
-			<item value="dogcur"/>
-			<item value="mypet"/>
-			<item value="birthday"/>
-			<item value="birth"/>
-			<item value="email"/>
-			<item value="view"/>
-			<item value="member"/>
-			<item value="admin_login_form"/>
+			<item value="frm"/>
+			<item value="databind"/>
+			<item value="pInfo"/>
+			<item value="text"/>
+			<item value="jquery"/>
+			<item value="ajax"/>
+			<item value="jackson"/>
+			<item value="fasterxml"/>
+			<item value="fastexml"/>
+			<item value="go_mov"/>
+			<item value="mService"/>
+			<item value="javax.servlet"/>
+			<item value="javax"/>
+			<item value="if"/>
+			<item value="go_search"/>
 		</list>
 		<list key="replacehistory">
+			<item value="when"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="910"/>
-		<item key="DIALOG_Y_ORIGIN" value="189"/>
-		<item key="DIALOG_WIDTH" value="288"/>
-		<item key="DIALOG_HEIGHT" value="391"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕"/>
+		<item key="DIALOG_X_ORIGIN" value="1815"/>
+		<item key="DIALOG_Y_ORIGIN" value="249"/>
+		<item key="DIALOG_WIDTH" value="393"/>
+		<item key="DIALOG_HEIGHT" value="523"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-18|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

@@ -14,33 +14,43 @@ function NumFormat(t) // 원 단위, 찍어주기
 function go_mov()
 {
 	var theForm = document.frm;
-	theForm.action = "MypetServlet?command=admin_product_list";
+	theForm.action = "/admin/product/productList?num=1";
 	theForm.submit();
 }
+
+
+
+
 //projectList.jsp
+
+
 function go_search() {
 	var theForm = document.frm;
-	theForm.action =  "MypetServlet?command=admin_product_search";
-	theForm.submit();
+	theForm.action =  "/admin/product/productSearch?num=1" + "&cateCode=" + cateCode + "&kind=" + kind + "&key=" + key;
 }
 
 function go_total() {
 	var theForm = document.frm;
 	theForm.key.value = "";
-	theForm.action =  "MypetServlet?command=admin_product_list";
-	theForm.submit();
+	theForm.action =  "/admin/product/productList?num=1";
+
 }
 
 function go_wrt() {
 	var theForm = document.frm;
 	theForm.action = "MypetServlet?command=admin_product_write_form";
-	theForm.submit();
+
 }
+
+
+
+
+
 // **************** productDetail.jsp
 function go_list(tpage) {
 	var theForm = document.frm;
 	//상품 리스트로 이동하되 현재 페이지를 쿼리 스트링으로 넘긴다.
-	theForm.action = "MypetServlet?command=admin_product_list&tpage=" + tpage;
+	theForm.action = "/admin/product/productList?num=" + tpage;
 	theForm.submit();
 }
 // **************** productDetail.jsp

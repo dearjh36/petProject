@@ -16,30 +16,30 @@ function go_detail(tpage, pNum) {
 </script>
 
 <article>
-<form name="frm" method="post">
+<form name="frm" method="get" action="/admin/product/productSearch">
  
  <h1>상품리스트</h1>
  <table>
   <tr>
   <td width="800">
        
-      상품분류
-       <select name="kind">
-    <c:forEach items="${kindList}" var="kind" varStatus="status">
-      <option value="${kind}">${kind}</option>
-   </c:forEach>
-  </select>  
- 카테고리
-  <select name="cateCode">
-    <c:forEach items="${cateCodeList}" var="cateCode" varStatus="status1">
-      <option value="${status1.index}">${cateCode}</option>
-   </c:forEach>
-   </select>
-  상품명  
-     <input type="text" name="key">
-     <input class="btn" type="button" name="btn_search" value="검색" onClick="go_search()">
-     <input class="btn" type="button" name="btn_total" value="전체보기 " onClick="go_total()">
-     <input class="btn" type="button" name="btn_write" value="상품등록" onClick="go_wrt()">
+		상품분류
+		<select name="kind">
+    		<c:forEach items="${kindList}" var="kind" varStatus="status">
+      		<option value="${kind}">${kind}</option>
+			</c:forEach>
+		</select>  
+ 		카테고리
+		<select name="cateCode">
+			<c:forEach items="${cateCodeList}" var="cateCode" varStatus="status1">
+				<option value="${status1.index}">${cateCode}</option>
+			</c:forEach>
+		</select>
+		상품명  
+		<input type="text" name="key">
+		<input class="btn" type="submit" name="btn_search" value="검색" >
+		<input class="btn" type="button" name="btn_total" value="전체보기 " onClick="location.href='/admin/product/productList?num=1'">
+		<input class="btn" type="button" name="btn_write" value="상품등록" onClick="location.href='/admin/product/productWrite'">
   </td>
   </tr>
 </table>
@@ -76,6 +76,24 @@ function go_detail(tpage, pNum) {
 </c:choose>  
 </table>
 
+<div>
+	<c:if test="${page.prev}">
+		<span>[<a href="/admin/product/productList?num=${page.startPageNum - 1}">이전</a>]</span>
+	</c:if>
+	<c:forEach begin="${page.startPageNum}" end="${page.endPageNum}" var="num">
+		<span>
+			<c:if test="${select != num}">
+				<a href="/admin/product/productList?num=${num}">${num}</a>
+			</c:if>
+			<c:if test="${select == num}">
+				<b>${num}</b>
+			</c:if>
+		</span>
+	</c:forEach>
+	<c:if test="${page.next}">
+		<span>[<a href="/admin/product/productList?num=${page.endPageNum + 1}">다음</a>]</span>
+	</c:if>	
+</div>
 </form>
 </article>  
 

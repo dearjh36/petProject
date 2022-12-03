@@ -10,7 +10,28 @@
 	<![CDATA[
 		select *
 		from product
-		where cateName = #{cateName}
+		where catecode = #{catecode}
+	]]>
+	</select>
+	
+	<!-- 전체 상품 목록 -->
+	<select id = "productAllList" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from product
+	]]>
+	</select>
+	
+	<!-- 전체 상품 목록 + 페이징 -->
+	<select id = "productAllListPage" parameterType="Integer" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from (
+			select *
+    		from product 
+    		order by pnum
+    		)
+		where pnum between #{displayPost} and #{displayPost}+10	
 	]]>
 	</select>
 	
@@ -30,6 +51,47 @@
 		from product
 		where catename = #{catename} and kind = #{kind}
 	]]>
+	</select>
+	
+	<!-- 상품 갯수 -->
+	<select id = "countProduct" resultType = "int">
+	<![CDATA[
+		select count(pNum) 
+		from product
+	]]>
+	</select>
+	
+	<!-- 상품 kind&cateCode 검색 -->
+	<select id = "productSearch" parameterType="hashMap" resultType = "com.pet.model.ProductVO">
+		<![CDATA[
+		select * 
+		from (
+			select *
+			from product
+					
+		]]>
+		<choose>
+		<when test='kind.equals("전체") and !cateCode.equals("0")'>
+			where pName like '%' || #{pName} || '%' and cateCode = #{cateCode}
+		</when>
+ 
+		<when test='!kind.equals("전체") and cateCode.equals("0")'>
+			where pName like '%' || #{pName} || '%' and kind = #{kind}
+		</when>
+		
+		<when test='kind.equals("전체") and cateCode.equals("0")'>
+			where pName like '%' || #{pName} || '%'
+		</when>
+ 
+		<otherwise>
+			where pName like '%' || #{pName} || '%' and kind = #{kind} and cateCode = #{cateCode}
+		</otherwise>
+		</choose>
+		<![CDATA[
+			order by pnum
+		)
+		where pnum between #{displayPost} and #{displayPost}+10	
+		]]>
 	</select>
 	
 </mapper>

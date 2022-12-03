@@ -70,7 +70,7 @@ public class MemberController {
 
 			if (login.getId().equals("admin")) {
 				session.setAttribute("member", login);
-				return "redirect:/admin/product/productList";
+				return "redirect:/admin/product/productList?num=1";
 			} else {
 				return "redirect:/";
 			}

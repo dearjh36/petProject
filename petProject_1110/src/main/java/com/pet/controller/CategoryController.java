@@ -31,7 +31,7 @@ public class CategoryController {
 	@RequestMapping(value = "/dog_main", method = RequestMethod.GET)
 	public void getDogMain(Model model) throws Exception{
 		
-		List<ProductVO> pList = pService.productList("dog");
+		List<ProductVO> pList = pService.productList("1");
 		model.addAttribute("ProductList",pList);
 		
 		logger.info("Dog 메인 페이지");

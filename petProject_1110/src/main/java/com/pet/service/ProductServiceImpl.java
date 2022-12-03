@@ -17,9 +17,9 @@ public class ProductServiceImpl implements ProductService {
 
 	// 상품 목록
 	@Override
-	public List<ProductVO> productList(String cateName) throws Exception {
+	public List<ProductVO> productList(String catecode) throws Exception {
 
-		List<ProductVO> result = dao.productList(cateName);
+		List<ProductVO> result = dao.productList(catecode);
 		return result;
 		
 	}
@@ -31,6 +31,15 @@ public class ProductServiceImpl implements ProductService {
 		List<ProductVO> result = dao.productAllList();
 		return result;
 				
+	}
+	
+	// 전체 상품 목록 + 페이징
+	@Override
+	public List<ProductVO> productAllListPage(int displayPost) throws Exception {
+		
+		List<ProductVO> result = dao.productAllListPage(displayPost);
+		return result;
+		
 	}
 
 	// 상품 상세보기
@@ -57,5 +66,13 @@ public class ProductServiceImpl implements ProductService {
 		return dao.countProduct();
 	}
 
+	// 상품 kind&cateCode 검색
+	@Override
+	public List<ProductVO> productSearch(String pName, String kind, String cateCode, int displayPost) throws Exception {
+
+		List<ProductVO> result = dao.productSearch(pName, kind, cateCode, displayPost);
+		return result;
+		
+	}
 
 }

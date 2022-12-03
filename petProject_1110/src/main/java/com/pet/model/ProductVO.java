@@ -8,7 +8,7 @@ public class ProductVO {
 	private String pImg; 	
 	private String pInfo; 
 	private String kind;
-	private String cateCode;
+	private int cateCode;
 	private String cateName;
 	
 	
@@ -18,11 +18,11 @@ public class ProductVO {
 				+ ", pInfo=" + pInfo + ", kind=" + kind + ", cateCode=" + cateCode + ", cateName=" + cateName + "]";
 	}
 
-	public String getCateCode() {
+	public int getCateCode() {
 		return cateCode;
 	}
 
-	public void setCateCode(String cateCode) {
+	public void setCateCode(int cateCode) {
 		this.cateCode = cateCode;
 	}
 

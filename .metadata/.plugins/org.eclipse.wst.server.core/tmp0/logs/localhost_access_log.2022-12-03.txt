@@ -1,0 +1,9 @@
+127.0.0.1 - - [03/Dec/2022:00:19:26 +0900] "GET / HTTP/1.1" 200 3388
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:26 +0900] "GET / HTTP/1.1" 200 3388
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:30 +0900] "GET /member/login HTTP/1.1" 200 3145
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:31 +0900] "POST /member/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:31 +0900] "GET /admin/product/productList?num=1 HTTP/1.1" 200 7835
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:31 +0900] "GET /resources/admin/product.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:31 +0900] "GET /resources/admin/images/under_logo.png HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:34 +0900] "GET /admin/product/productWrite HTTP/1.1" 200 3600
+0:0:0:0:0:0:0:1 - - [03/Dec/2022:00:19:54 +0900] "POST /admin/product/productWrite HTTP/1.1" 500 5478

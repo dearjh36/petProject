@@ -11,3 +11,16 @@
 12월 01, 2022 14:46:57.438 [8800:8020:1201/144657.435:ERROR:connection_factory_impl.cc(426)] Failed to connect to MCS endpoint with error -7
 12월 01, 2022 14:46:58.695 [8800:2892:1201/144658.695:ERROR:device_event_log_impl.cc(215)] [14:46:58.692] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
 12월 01, 2022 14:46:58.697 [8800:2892:1201/144658.697:ERROR:device_event_log_impl.cc(215)] [14:46:58.696] USB: usb_service_win.cc:307 SetupDiEnumDeviceInterfaces: 사용 가능한 데이터가 없습니다. (0x103)
+
+12월 02, 2022 11:03:58.314 NEW SESSION
+12월 02, 2022 11:03:58.314 [4140:13008:1202/110358.312:ERROR:device_event_log_impl.cc(215)] [11:03:58.311] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 02, 2022 11:03:58.314 [4140:13008:1202/110358.314:ERROR:device_event_log_impl.cc(215)] [11:03:58.313] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 02, 2022 11:04:56.51 [4140:2312:1202/110456.051:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+12월 02, 2022 11:09:28.66 [4140:13008:1202/110928.066:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 02, 2022 11:09:28.66 [4140:13008:1202/110928.066:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 02, 2022 11:33:49.898 [4140:8776:1202/113349.897:ERROR:mcs_client.cc(748)] Received close command, resetting connection.
+
+12월 02, 2022 14:09:26.721 NEW SESSION
+12월 02, 2022 14:09:26.721 [4084:9012:1202/140926.718:ERROR:device_event_log_impl.cc(215)] [14:09:26.718] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 02, 2022 14:09:26.723 [4084:9012:1202/140926.720:ERROR:device_event_log_impl.cc(215)] [14:09:26.720] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 02, 2022 14:10:23.926 [4084:12904:1202/141023.926:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater

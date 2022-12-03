@@ -5,7 +5,12 @@
 
 <mapper namespace="com.pet.mapper.AdminMapper">
 
-	
-	
+	<!-- 관리자 상품 등록 -->
+	<insert id = "insertProduct">
+	<![CDATA[
+		insert into product
+		values (pro_seq.nextVal,#{pName},#{pPrice},#{CP},#{pImg},#{pInfo},#{cateCode},#{cateName},#{kind})
+	]]>
+	</insert>
 	
 </mapper>

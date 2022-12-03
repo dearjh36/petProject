@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.ProductMapper">
+	
+	<!-- 상품 목록 -->
+	<select id = "productList" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from product
+		where catecode = #{catecode}
+	]]>
+	</select>
+	
+	<!-- 전체 상품 목록 -->
+	<select id = "productAllList" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from product
+	]]>
+	</select>
+	
+	<!-- 전체 상품 목록 + 페이징 -->
+	<select id = "productAllListPage" parameterType="Integer" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from (
+			select *
+    		from product 
+    		order by pnum
+    		)
+		where pnum between #{displayPost} and #{displayPost}+10	
+	]]>
+	</select>
+	
+	<!-- 상품 상세보기 -->
+	<select id = "productView" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from product
+		where pNum = #{pNum}
+	]]>
+	</select>
+	
+	<!-- 종류별 상품 목록 -->
+	<select id = "productKindList" parameterType="hashMap" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select *
+		from product
+		where catename = #{catename} and kind = #{kind}
+	]]>
+	</select>
+	
+	<!-- 상품 갯수 -->
+	<select id = "countProduct" resultType = "int">
+	<![CDATA[
+		select count(pNum) 
+		from product
+	]]>
+	</select>
+	
+	<!-- 상품 kind&cateCode 검색 -->
+	<select id = "productSearch" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select * 
+		from product
+		where pName like '%' || #{key} || '%' and kind = #{kind} and catecode = #{catecode}
+	]]>
+	</select>
+	
+	<!-- 상품 kind 검색 -->
+	<select id = "productKindSearch" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select * 
+		from product
+		where pName like '%' || #{key} || '%' and kind = #{kind}
+	]]>
+	</select>
+	
+	<!-- 상품 cateCode 검색 -->
+	<select id = "productCatecodeSearch" resultType = "com.pet.model.ProductVO">
+	<![CDATA[
+		select * 
+		from product
+		where pName like '%' || #{key} || '%' and catecode = #{catecode}
+	]]>
+	</select>
+	
+</mapper>
