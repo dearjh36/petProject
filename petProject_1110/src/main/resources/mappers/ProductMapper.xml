@@ -36,7 +36,7 @@
 	</select>
 	
 	<!-- 상품 상세보기 -->
-	<select id = "productView" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<select id = "productView" parameterType="Integer" resultType = "com.pet.model.ProductVO">
 	<![CDATA[
 		select *
 		from product

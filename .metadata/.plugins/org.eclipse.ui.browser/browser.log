@@ -24,3 +24,29 @@
 12월 02, 2022 14:09:26.721 [4084:9012:1202/140926.718:ERROR:device_event_log_impl.cc(215)] [14:09:26.718] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 12월 02, 2022 14:09:26.723 [4084:9012:1202/140926.720:ERROR:device_event_log_impl.cc(215)] [14:09:26.720] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 12월 02, 2022 14:10:23.926 [4084:12904:1202/141023.926:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+
+12월 04, 2022 17:38:24.707 NEW SESSION
+12월 04, 2022 17:38:24.707 [14272:3312:1204/173824.706:ERROR:device_event_log_impl.cc(215)] [17:38:24.706] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 04, 2022 17:39:22.603 [14272:984:1204/173922.603:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+12월 04, 2022 17:42:25.198 [14272:3312:1204/174225.197:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 17:42:42.339 [14272:3312:1204/174242.338:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 17:43:48.215 [14272:3312:1204/174348.215:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 17:43:48.215 [14272:3312:1204/174348.215:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 18:11:05.278 [14272:3312:1204/181105.278:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 18:28:59.350 [14272:2224:1204/182859.350:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+12월 04, 2022 18:28:59.351 [14272:2224:1204/182859.350:ERROR:connection_factory_impl.cc(472)] ConnectionHandler failed with net error: -2
+12월 04, 2022 18:50:49.573 [14272:3312:1204/185049.573:ERROR:device_event_log_impl.cc(215)] [18:50:49.573] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+12월 04, 2022 19:00:22.62 [14272:3312:1204/190022.061:ERROR:interface_endpoint_client.cc(694)] Message 0 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 19:15:02.818 [14272:3312:1204/191502.818:ERROR:page_load_metrics_update_dispatcher.cc(63)] Received null navigation_start.
+12월 04, 2022 19:23:44.281 [14272:2224:1204/192344.281:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+12월 04, 2022 19:23:44.282 [14272:2224:1204/192344.281:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+12월 04, 2022 19:24:05.342 [14272:2224:1204/192405.342:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+12월 04, 2022 19:24:10.495 [14272:2224:1204/192410.495:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+12월 04, 2022 19:24:48.677 [14272:2224:1204/192448.677:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+12월 04, 2022 19:24:56.665 [14272:2224:1204/192456.665:ERROR:connection_factory_impl.cc(427)] Failed to connect to MCS endpoint with error -106
+12월 04, 2022 21:29:04.04 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+12월 04, 2022 22:39:22.604 [14272:4548:1204/223922.604:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+12월 04, 2022 22:39:26.338 [14272:3312:1204/223926.337:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 22:39:26.338 [14272:3312:1204/223926.337:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 23:29:21.465 [14272:3312:1204/232921.465:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 04, 2022 23:29:21.466 [14272:3312:1204/232921.465:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost

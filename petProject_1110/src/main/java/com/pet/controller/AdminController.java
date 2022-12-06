@@ -1,9 +1,9 @@
 package com.pet.controller;
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
-
+import java.io.File;
 import java.util.List;
 
+import javax.annotation.Resource;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pet.model.MemberVO;
@@ -23,6 +24,7 @@ import com.pet.model.ProductVO;
 import com.pet.service.AdminService;
 import com.pet.service.MemberService;
 import com.pet.service.ProductService;
+import com.pet.util.UploadFileUtils;
 
 @Controller
 @RequestMapping("/admin/")
@@ -35,9 +37,12 @@ public class AdminController {
 
 	@Inject
 	private ProductService pService;
-	
+
 	@Inject
 	private AdminService aService;
+
+	@Resource(name = "uploadPath")
+	private String uploadPath;
 
 	// 관리자 로그인 화면
 	@RequestMapping(value = "/main", method = RequestMethod.GET)
@@ -117,7 +122,6 @@ public class AdminController {
 
 		int num2 = page.getDisplayPost();
 
-		logger.info("num2 : " + num2);
 
 		List<ProductVO> productList = null;
 		productList = pService.productSearch(pName, kind, cateCode, num2);
@@ -138,22 +142,84 @@ public class AdminController {
 		String cateCodeList[] = { "전체", "강아지", "고양이", "새", "파충류" };
 		model.addAttribute("kindList", kindList);
 		model.addAttribute("cateCodeList", cateCodeList);
-		
+
 	}
+
 	// 관리자 상품 등록
 	@RequestMapping(value = "/product/productWrite", method = RequestMethod.POST)
-	public String adminProductWritePOST(ProductVO pVO, Model model, RedirectAttributes rttr) throws Exception {
-		
+	public String adminProductWritePOST(ProductVO pVO, Model model, HttpServletRequest req,@RequestParam(value = "fileImg") MultipartFile pImg)
+			throws Exception {
+
 		String kindList[] = { "전체", "사료", "간식", "용품" };
 		String cateCodeList[] = { "전체", "강아지", "고양이", "새", "파충류" };
 		model.addAttribute("kindList", kindList);
 		model.addAttribute("cateCodeList", cateCodeList);
 		
+		String cateName = req.getParameter("cateCode");
+		logger.info(cateName);
+		
+		switch(cateName) {
+			case "0" : cateName = "전체"; break;
+			case "1" : cateName = "dog"; break;
+			case "2" : cateName = "cat"; break;
+			case "3" : cateName = "bird"; break;
+			case "4" : cateName = "rep"; break;
+			
+		}
+		pVO.setCateName(cateName);
+
+		String imgUploadPath = uploadPath + File.separator + "imgUpload";
+		String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+		String fileName = null;
+		logger.info(pImg.getOriginalFilename());
+
+		if (pImg.getOriginalFilename() != null && pImg.getOriginalFilename() != "") {
+			fileName = UploadFileUtils.fileUpload(imgUploadPath, pImg.getOriginalFilename(), pImg.getBytes(), ymdPath);
+			logger.info(fileName);
+			pVO.setpImg(File.separator + "imgUpload" + ymdPath + File.separator + fileName);
+		} else {
+			fileName = uploadPath + File.separator + "images" + File.separator + "none.png";			
+			logger.info(fileName);
+			pVO.setpImg(fileName);
+		}
+
 		aService.insertProduct(pVO);
-		
-		rttr.addFlashAttribute("enroll_result", pVO.getpName());
-		
+
+
 		return "redirect:/admin/product/productList?num=1";
+	}
+	
+	// 상품 상세보기
+	@RequestMapping(value = "/product/productDetail", method = RequestMethod.GET)
+	public void adminProductDetailGET(@RequestParam("pNum") int pNum, Model model) throws Exception {
+
+		ProductVO pVO = pService.productView(pNum);
+		model.addAttribute("productVO",pVO); 
+		
+		String kindList[] = { "전체", "사료", "간식", "용품" };
+		String cateCodeList[] = { "전체", "강아지", "고양이", "새", "파충류" };
+		model.addAttribute("kindList", kindList);
+		model.addAttribute("cateCodeList", cateCodeList);
+
+	}
+	
+	// 상품 수정하기
+	@RequestMapping(value = "/product/productModify", method = RequestMethod.POST)
+	public void adminProductModifyPOST(ProductVO pVO, HttpServletRequest req, MultipartFile file) throws Exception {
+		
+		// 새로 파일 등록되었는지 확인
+		if(file.getOriginalFilename() != null && file.getOriginalFilename() != "") {
+			
+			// 기존 파일 삭제
+			new File(uploadPath + req.getParameter("pImg")).delete();
+			
+			// 새로 첨부한 파일을 등록
+			String imgUploadPath = uploadPath + File.separator + "imgUpload";
+			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
+			String fileName = uploadPath.fil
+			
+		}
+		
 	}
 
 }

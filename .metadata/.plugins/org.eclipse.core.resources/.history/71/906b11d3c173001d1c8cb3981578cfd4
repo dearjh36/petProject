@@ -1,0 +1,18 @@
+package com.pet.util;
+
+import java.util.UUID;
+
+public class UploadFileUtils {
+	
+	public static String fileUpload(String uploadPath, String fileName, byte[] fileData, String ymdPath) throws Exception{
+		
+		// 랜덤 문자 생성
+		UUID uid = UUID.randomUUID();
+		
+		String newFileName = uid+"_"+fileName; // "랜덤문자_파일명"
+		
+		
+		return ymdPath;		
+	}
+
+}

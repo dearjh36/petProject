@@ -1,3 +1,4 @@
+
 function NumFormat(t) // 원 단위, 찍어주기
 {
 	s = t.value;

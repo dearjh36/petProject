@@ -2,20 +2,19 @@
   pageEncoding="UTF-8"%>
 <%@ include file="../header.jsp"%>
 <%@ include file="../sub_menu.jsp"%>
-<script
-  src="https://code.jquery.com/jquery-3.4.1.js"
-  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
-  crossorigin="anonymous"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
+	/* 이미지 업로드 */
+
 	function go_save() 
 	{
 		 var theForm = document.frm;		
 			theForm.action = "/admin/product/Write";
 			theForm.submit();
 	}
-
 	
 </script>
+
 <article>
 
 <h1>상품등록</h1>  
@@ -71,12 +70,14 @@
     <th>상품이미지</th>
     <td width="343" colspan="5">
 <!--  [2] 파일 업로드를 하기 위한 input 태그는 타입 속성 값을 file로 지정해야 한다.  -->
-      <input type="file" name="pImg" required>
-    </td>
+      <input type="file" name="fileImg"required></td>
+
+  
   </tr>    
 </table>
 <input type="submit" value="등록" class="btn" >           
 <input class="btn" type="button" value="취소" onClick="go_mov()">
 </form> 
 </article>
+
 <%@ include file="../footer.jsp"%>

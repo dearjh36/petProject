@@ -13,4 +13,18 @@
 	]]>
 	</insert>
 	
+	<!-- 상품 수정 -->
+	<update id="modifyProduct">
+		update product
+		set
+			kind = #{kind},
+			cateCode = #{cateCode},
+			pName = #{pName},
+			CP = #{CP},
+			pPrice = #{pPrice},
+			pInfo = #{pInfo},
+			pImg = #{pImg}
+		where pNum = #{pNum}
+	</update>
+	
 </mapper>
