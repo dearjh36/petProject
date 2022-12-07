@@ -21,14 +21,14 @@
 <div id="cateList">
 	<table>
 		<tr>
-			<c:forEach items="${CategoryList}" var="categoryVO">
+			<c:forEach items="${cateList}" var="cateList">
 				<c:choose>
-					<c:when test="${categoryVO.cateName eq 'none'}">
+					<c:when test="${cateList.cateName eq 'none'}">
 						<th style="display: none;">none</th>
 					</c:when>
 					<c:otherwise>
-						<th><a href="/${cateList.cateName}_main">
-								<img src="/resources/images/category/${categoryVO.cateName}_index.JPG" />
+						<th><a href="/cate_main?cateName=${cateList.cateName}">
+								<img src="/resources/images/category/${cateList.cateName}_index.JPG" />
 						</a></th>
 					</c:otherwise>
 				</c:choose>

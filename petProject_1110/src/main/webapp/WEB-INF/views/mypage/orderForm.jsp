@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<script src="jquery-3.6.0.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script>
 function getInfo(obj,name,phone,address) {
 	var ch = obj.checked;
@@ -138,7 +137,7 @@ function show2(){
 				<td><label><input type="radio" name="pay" value="kakao" onclick="show1();"> 카카오페이(미구현)</label></td>
 			</tr>
 		</table>
-				<div id="div1">이젠은행 123-45212-1101 예금주: 웰컴펫</div>
+				<div id="div1">경민은행 123-45212-1101 예금주: 웰컴펫</div>
 
 		<div id="pay_agree">
 			<label><input type="checkbox" name="orderconfirm"
@@ -153,10 +152,8 @@ function show2(){
 		</table>
 		<div class="clear"></div>
 		<div id="order_ing" style="float: right">
-			<input type="reset" value="주문취소" name="orderCancle" id="null_ing"
-				onclick="Cancle()">
-				 <input type="button" value="주문하기" name="orderconfirm1" onclick="go_order(${cart.cNum})" class="cancel">
-
+			<input type="reset" value="주문취소" name="orderCancle" id="null_ing" onclick="Cancle()">
+			<input type="button" value="주문하기" name="orderconfirm1" onclick="go_order(${cart.cNum})" class="cancel">
 		</div>
 	</form>
 </article>

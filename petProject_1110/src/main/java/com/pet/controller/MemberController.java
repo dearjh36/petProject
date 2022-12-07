@@ -16,7 +16,6 @@ import com.pet.model.MemberVO;
 import com.pet.service.MemberService;
 
 @Controller
-@RequestMapping(value = "/member")
 public class MemberController {
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
 
@@ -24,18 +23,18 @@ public class MemberController {
 	private MemberService mService;
 
 	// 회원가입 GET
-	@RequestMapping(value = "/contract", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/contract", method = RequestMethod.GET)
 	public void getJoinContract() throws Exception {
 	}
-	
+
 	// 회원가입 GET
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/join", method = RequestMethod.GET)
 	public void getJoin() throws Exception {
 		logger.info("get 회원가입");
 	}
 
 	// 회원가입 POST
-	@RequestMapping(value = "/join", method = RequestMethod.POST)
+	@RequestMapping(value = "/member/join", method = RequestMethod.POST)
 	public String postJoin(MemberVO memVO) throws Exception {
 		logger.info("post 회원가입");
 		logger.info(memVO.toString());
@@ -46,19 +45,19 @@ public class MemberController {
 	}
 
 	// 회원가입 성공
-	@RequestMapping(value = "/joinSuccess", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/joinSuccess", method = RequestMethod.GET)
 	public void getJoinSuccess() throws Exception {
 		logger.info("회원가입 성공");
 	}
 
 	// 로그인 GET
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/login", method = RequestMethod.GET)
 	public void getLogin() throws Exception {
 		logger.info("get 로그인");
 	}
 
 	// 로그인 POST
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping(value = "/member/login.do", method = RequestMethod.POST)
 	public String postLogin(MemberVO memVO, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
 		logger.info("get 로그인");
 
@@ -83,7 +82,7 @@ public class MemberController {
 	}
 
 	// 로그아웃
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	@RequestMapping(value = "/member/logout", method = RequestMethod.GET)
 	public String Logout(HttpSession session) throws Exception {
 
 		logger.info("get 로그아웃");
@@ -95,7 +94,7 @@ public class MemberController {
 	}
 
 	// 아이디 중복 검사
-	@RequestMapping(value = "/memberIdChk", method = RequestMethod.POST)
+	@RequestMapping(value = "/member/memberIdChk", method = RequestMethod.POST)
 	@ResponseBody
 	public String memberIdChkPOST(String memberId) throws Exception {
 
@@ -116,4 +115,11 @@ public class MemberController {
 		}
 
 	} // memberIdChkPOST() 종료
+
+	// 마이페이지
+	@RequestMapping(value = "/mypage/mypage", method = RequestMethod.GET)
+	public void myPageGET(HttpSession session) throws Exception {
+
+		
+	}
 }

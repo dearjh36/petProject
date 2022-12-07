@@ -50,3 +50,13 @@
 12월 04, 2022 22:39:26.338 [14272:3312:1204/223926.337:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 12월 04, 2022 23:29:21.465 [14272:3312:1204/232921.465:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 12월 04, 2022 23:29:21.466 [14272:3312:1204/232921.465:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+12월 06, 2022 21:53:14.740 NEW SESSION
+12월 06, 2022 21:53:14.740 [9920:7892:1206/215314.738:ERROR:device_event_log_impl.cc(215)] [21:53:14.738] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 06, 2022 21:54:12.328 [9920:6208:1206/215412.327:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+12월 06, 2022 22:09:31.671 [9920:7892:1206/220931.671:ERROR:device_event_log_impl.cc(215)] [22:09:31.671] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+12월 06, 2022 22:51:48.48 [9920:7892:1206/225148.047:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 06, 2022 22:51:48.49 [9920:7892:1206/225148.047:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 07, 2022 24:14:55.164 [9920:7892:1207/001455.164:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 07, 2022 24:14:55.165 [9920:7892:1207/001455.164:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+12월 07, 2022 24:14:55.165 [9920:7892:1207/001455.164:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost

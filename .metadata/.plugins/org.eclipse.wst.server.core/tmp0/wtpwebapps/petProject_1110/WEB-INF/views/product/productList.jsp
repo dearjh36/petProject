@@ -11,7 +11,7 @@
 	<div id="Product">
 		<c:forEach items="${ProductList}" var="productVO">
 			<div id="item">
-				<a href="MypetServlet?command=product_detail&pNum=${productVO.pNum}">
+				<a href="/product/productDetail?pNum=${productVO.pNum}">
 					<img src="/resources/images/product_img/${productVO.pImg}" />
 					<h3>${productVO.pName}</h3>
 					<fmt:formatNumber value="${productVO.pPrice}" pattern="#,###,###" type="number"/>원

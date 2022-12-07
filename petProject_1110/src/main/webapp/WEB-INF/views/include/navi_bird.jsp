@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link href="./css/mypet.css" rel="stylesheet">
+<link href="/resources/css/mypet.css" rel="stylesheet">
 	<div class="clear"></div>
 		<div id="navi">
 			<ul>
 				<li id="main_pro_cate"><div id="main_pro_bird"><div id="cate_bird">상품 카테고리</div></div></li>
 				
-				<li><a href="MypetServlet?command=product_kind&cateName=bird&kind=1">사료</a></li>
-				<li><a href="MypetServlet?command=product_kind&cateName=bird&kind=2">간식</a></li>
-				<li><a href="MypetServlet?command=product_kind&cateName=bird&kind=3">용품</a></li>
+				<li><a href="/bird_product_kind?kind=사료">사료</a></li>
+				<li><a href="/bird_product_kind?kind=간식">간식</a></li>
+				<li><a href="/bird_product_kind?kind=용품">용품</a></li>
 			</ul>
 	</div>

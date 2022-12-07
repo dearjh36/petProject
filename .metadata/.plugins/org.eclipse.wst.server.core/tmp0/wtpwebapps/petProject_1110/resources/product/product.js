@@ -3,7 +3,7 @@ function go_cart() {
 	    alert("수량을 입력하여 주세요.");
 	    document.formm.cnt.focus();
 	  } else {
-	    document.formm.action = "MypetServlet?command=cart_insert";
+	    document.formm.action = "/cart/add";
 	    document.formm.submit();
 	  }
 	}

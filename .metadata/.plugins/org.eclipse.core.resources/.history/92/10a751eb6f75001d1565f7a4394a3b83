@@ -1,0 +1,16 @@
+package com.pet.dao;
+
+import com.pet.model.CartDTO;
+
+public interface CartDao {
+
+	// 장바구니 추가
+	public int addCart(CartDTO cart) throws Exception;
+	
+	// 장바구니 삭제
+	public int addCart(CartDTO cart) throws Exception;
+	
+	// 장바구니 수량 변경
+	public int addCart(CartDTO cart) throws Exception;
+	
+}

@@ -6,11 +6,11 @@
 <mapper namespace="com.pet.mapper.ProductMapper">
 	
 	<!-- 상품 목록 -->
-	<select id = "productList" parameterType="String" resultType = "com.pet.model.ProductVO">
+	<select id = "productList" resultType = "com.pet.model.ProductVO">
 	<![CDATA[
 		select *
 		from product
-		where catecode = #{catecode}
+		where cateName = #{cateName}
 	]]>
 	</select>
 	
@@ -45,11 +45,11 @@
 	</select>
 	
 	<!-- 종류별 상품 목록 -->
-	<select id = "productKindList" parameterType="hashMap" resultType = "com.pet.model.ProductVO">
+	<select id = "productKindList" resultType = "com.pet.model.ProductVO">
 	<![CDATA[
 		select *
 		from product
-		where catename = #{catename} and kind = #{kind}
+		where cateName = #{cateName} and kind = #{kind}
 	]]>
 	</select>
 	

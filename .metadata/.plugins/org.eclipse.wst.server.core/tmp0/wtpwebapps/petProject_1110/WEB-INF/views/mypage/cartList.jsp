@@ -1,8 +1,7 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<script type="text/javascript" src="mypage/mypage.js"></script>
+<script type="text/javascript" src="/resources/mypage.js"></script>
 <article>
 	<h2>장바구니</h2>
 	<form name="formm" method="post">
@@ -18,10 +17,10 @@
 
 					<c:forEach items="${cartList}" var="cartVO">
 						<tr>
-							<td><a href="MypetServlet?command=product_detail&pNum=${cartVO.pNum_cart}">${cartVO.pName}</a></td>
+							<td><a href="/product/productDetail?pNum=${cartVO.pNum}">${cartVO.pName}</a></td>
 							<td>${cartVO.cnt}</td>
 							<td><fmt:formatNumber value="${cartVO.pPrice*cartVO.cnt}" type="currency" /></td>
-							<td><a href="MypetServlet?command=cart_delete&cNum=${cartVO.cNum}">삭제</a>
+							<td><a href="/cart/delete?cNum=${cartVO.cNum}">삭제</a>
 							</td>
 						</tr>
 					</c:forEach>
@@ -38,18 +37,15 @@
 
 		<div id="ing" style="float: right">
 		<c:choose>
-			<c:when test="${cateName=='none'}">
-			<input type="button" value="쇼핑 계속하기" id="null_ing"
-				onclick="location.href='MypetServlet?command=index'">
-				</c:when>
-				<c:otherwise>
-			<input type="button" value="쇼핑 계속하기" id="null_ing"
-				onclick="location.href='MypetServlet?command=${cateName}'">
-				</c:otherwise>
+			<c:when test="${cateName eq 'none'}">
+				<input type="button" value="쇼핑 계속하기" id="null_ing" onclick="location.href='/'">
+			</c:when>
+			<c:otherwise>
+				<input type="button" value="쇼핑 계속하기" id="null_ing" onclick="location.href='/cate_main?cateName=${cateName}'">
+			</c:otherwise>
 		</c:choose>
 			<c:if test="${cartList.size() != 0}">
-				<input type="button" value="주문하기" id="order_btn"
-					onclick="location.href='MypetServlet?command=order_form'">
+				<input type="button" value="주문하기" id="order_btn" onclick="location.href='/mypage/orderForm'">
 			</c:if>
 		</div>
 	</form>

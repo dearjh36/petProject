@@ -81,7 +81,7 @@ create table p_order(
 create table cart(
 	cNum 	   number(10)   not null primary key,				-- 시퀸스(장바구니 번호)
 	id 		   varchar2(20) references Join_User(ID),	        -- 주문자 FK Join_User의 ID
-	pNum_cart  number(10)   references product(pNum),	        -- 상품번호 FK Product의 pNum
+	pNum       number(10)   references product(pNum),	        -- 상품번호 FK Product의 pNum
 	cnt 	   number(4)    default 1 not null 					-- 주문 수량
 );
 

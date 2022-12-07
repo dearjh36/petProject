@@ -216,9 +216,16 @@ public class AdminController {
 			// 새로 첨부한 파일을 등록
 			String imgUploadPath = uploadPath + File.separator + "imgUpload";
 			String ymdPath = UploadFileUtils.calcPath(imgUploadPath);
-			String fileName = uploadPath.fil
+			//String fileName = uploadPath.fil
 			
 		}
+		
+	}
+	
+	// 주문 목록
+	@RequestMapping(value = "/p_order/p_orderList", method = RequestMethod.GET)
+	public void adminProductModifyGET() throws Exception {
+	
 		
 	}
 

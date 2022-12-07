@@ -5,7 +5,7 @@
 
 <article>
 	<h1>상품 상세 보기</h1>
-	<form name="frm" method="post" action="/admin/product/productModify">
+	<form name="frm" method="post" action="/admin/product/productModify" enctype="multipart/form-data">
 		<input type="hidden" name="pNum" value="${productVO.pNum}">
 		<table id="list">
 			<tr>
@@ -50,9 +50,23 @@
 			<tr>
 				<th>상품이미지</th>
 				<td colspan="5" align="center">
-					<!--[7] 상품 이미지를 출력하기 --> <img
-					src="/resources/images/product_img/${productVO.pImg}" width="200pt"><br>
-					<input type="file" name="fileImg">
+					<!--[7] 상품 이미지를 출력하기 --> 
+					<img src="/resources/images/product_img/${productVO.pImg}" width="200pt" class="select_img"><br>
+					<input type="file" name="fileImg" id="fileImg">
+					<input type="hidden" name="pImg" value="${productVO.pImg}"/>
+					<script>
+						$("#fileImg").change(function(){
+							if(this.files && this.files[0]){
+								var reader = new FileReader;
+								reader.onload = function(data){
+									$(".select_img img").attr("src",data.target.result);
+								}
+								reader.readAsDataURL(this.files[0]);
+							}
+						})
+					</script>
+					<br>
+					<%=request.getRealPath("/") %>
 				</td>
 			</tr>
 

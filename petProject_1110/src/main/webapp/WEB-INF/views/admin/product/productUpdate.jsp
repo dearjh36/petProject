@@ -75,7 +75,46 @@
   <tr>
     <th>상품이미지</th>
     <td colspan="5">
-      <img src="images/product_img/${productVO.pImg}" width="200pt">     
+      <img src="images/product_img/${productVO.pImg}"  width="200pt">     
+      
+     	<script>
+     	$("input[type='file']").on("change", function(e){
+    		
+    		/* 이미지 존재시 삭제 */
+    		if($(".imgDeleteBtn").length > 0){
+    			deleteFile();
+    		}
+    		
+    		let formData = new FormData();
+    		let fileInput = $('input[name="uploadFile"]');
+    		let fileList = fileInput[0].files;
+    		let fileObj = fileList[0];
+    		
+    		if(!fileCheck(fileObj.name, fileObj.size)){
+    			return false;
+    		}
+    		
+    		formData.append("uploadFile", fileObj);
+    		
+    		$.ajax({
+    			url: '/admin/uploadAjaxAction',
+    	    	processData : false,
+    	    	contentType : false,
+    	    	data : formData,
+    	    	type : 'POST',
+    	    	dataType : 'json',
+    	    	success : function(result){
+    	    		console.log(result);
+    	    		showUploadImage(result);
+    	    	},
+    	    	error : function(result){
+    	    		alert("이미지 파일이 아닙니다.");
+    	    	}
+    		});		
+
+    		
+    	});
+		</script>
       <br>
       <input type="file" name="pImg">
     </td> 

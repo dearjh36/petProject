@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.CartMapper">
+
+	<!-- 카트 추가 -->
+	<insert id="addCart">
+	<![CDATA[
+		insert into cart
+		values(cart_seq.nextVal, #{id}, #{pNum}, #{cnt})
+	]]>
+	</insert>
+
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+		delete from cart where cNum = #{cNum}
+	</delete>
+
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+		update cart
+		set cnt = #{cnt}
+		where cNum = #{cNum}
+	</update>
+	
+	<!-- 카트 목록 -->
+	<select id="getCart" resultType="com.pet.model.CartDTO">
+		select a.cNum, a.id, a.pNum, a.cnt, b.pName, b.pPrice
+		from cart a left outer join product on a.pNum = b.pNum
+		where id = #{id}
+	</select>
+	
+	<!-- 카트 확인 -->
+	<select id="checkCart" resultType="com.pet.model.CartDTO">
+	
+		select * from cart 
+		where id = #{id} and pNum = #{pNum}
+	
+	</select>
+
+</mapper>

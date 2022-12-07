@@ -70,14 +70,51 @@
     <th>상품이미지</th>
     <td width="343" colspan="5">
 <!--  [2] 파일 업로드를 하기 위한 input 태그는 타입 속성 값을 file로 지정해야 한다.  -->
-      <input type="file" name="fileImg"required></td>
+      <input type="file" name="fileImg" required></td>
 
-  
+  	
   </tr>    
 </table>
 <input type="submit" value="등록" class="btn" >           
 <input class="btn" type="button" value="취소" onClick="go_mov()">
 </form> 
 </article>
+<script>
+     	$("input[type='file']").on("change", function(e){
+    		
+    		/* 이미지 존재시 삭제 */
+    		if($(".imgDeleteBtn").length > 0){
+    			deleteFile();
+    		}
+    		
+    		let formData = new FormData();
+    		let fileInput = $('input[name="fileImg"]');
+    		let fileList = fileInput[0].files;
+    		let fileObj = fileList[0];
+    		
+    		if(!fileCheck(fileObj.name, fileObj.size)){
+    			return false;
+    		}
+    		
+    		formData.append("fileImg", fileObj);
+    		
+    		$.ajax({
+    			url: '/admin/uploadAjaxAction',
+    	    	processData : false,
+    	    	contentType : false,
+    	    	data : formData,
+    	    	type : 'POST',
+    	    	dataType : 'json',
+    	    	success : function(result){
+    	    		console.log(result);
+    	    		showUploadImage(result);
+    	    	},
+    	    	error : function(result){
+    	    		alert("이미지 파일이 아닙니다.");
+    	    	}
+    		});		
 
+    		
+    	});
+	</script>
 <%@ include file="../footer.jsp"%>

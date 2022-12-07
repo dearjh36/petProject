@@ -4,13 +4,13 @@
 <%@ include file="include/navi_bird.jsp"%>
 <style>
 html, body {
-	cursor: url(images/birdcur.cur), auto;
+	cursor: url(/resources/images/birdcur.cur), auto;
 }
 #front {
-	cursor: url(images/birdcur.cur), auto;
+	cursor: url(/resources/images/birdcur.cur), auto;
 }
 a:hover {
-	cursor: url(images/birdcur_over.cur), auto;
+	cursor: url(/resources/images/birdcur_over.cur), auto;
 }
 </style>
 
@@ -18,7 +18,7 @@ a:hover {
 <!--메인 이미지 들어가는 곳 시작 --->
 <div id="wrap" style="transform:translateY(-160px)">
 	<div id="main_img">
-		<img src="images/bird_main.jpg">
+		<img src="/resources/images/bird_main.jpg">
 	</div>
 </div>
 <!--메인 이미지 들어가는 곳 끝--->
@@ -44,8 +44,8 @@ s0.parentNode.insertBefore(s1,s0);
 	<div id="Product">
 		<c:forEach items="${ProductList}" var="productVO">
 			<div id="item">
-				<a href="MypetServlet?command=product_detail&pNum=${productVO.pNum}">
-					<img src="images/product_img/${productVO.pImg}" />
+				<a href="/product_detail&pNum=${productVO.pNum}">
+					<img src="/resources/images/product_img/${productVO.pImg}" />
 					<h3>${productVO.pName}</h3>
 					<fmt:formatNumber value="${productVO.pPrice}" pattern="#,###,###" type="number"/>원
 					
@@ -56,7 +56,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<c:forEach items="${productKindList}" var="kindList">
 			<div id="item">
 				<a href="MypetServlet?command=product_detail&pNum=${kindList.pNum}">
-					<img src="images/product_img/${kindList.pImg}" />
+					<img src="/resources/images/product_img/${kindList.pImg}" />
 					<h3>${kindList.pName}</h3>
 					<fmt:formatNumber value="${kindList.pPrice}" pattern="#,###,###" type="number"/>원
 					

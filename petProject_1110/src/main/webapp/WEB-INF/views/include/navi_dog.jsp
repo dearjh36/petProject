@@ -7,8 +7,8 @@
 			<ul>
 				<li id="main_pro_cate"><div id="main_pro_dog"><div id="cate_dog">상품 카테고리</div></div></li>
 				
-				<li><a href="/dog_product_kind?kind=1">사료</a></li>
-				<li><a href="/dog_product_kind?kind=2">간식</a></li>
-				<li><a href="/dog_product_kind?kind=3">용품</a></li>
+				<li><a href="/dog_product_kind?kind=사료">사료</a></li>
+				<li><a href="/dog_product_kind?kind=간식">간식</a></li>
+				<li><a href="/dog_product_kind?kind=용품">용품</a></li>
 			</ul>
 	</div>

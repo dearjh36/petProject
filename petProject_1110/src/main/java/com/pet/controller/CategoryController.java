@@ -18,33 +18,76 @@ import com.pet.service.ProductService;
 
 @Controller
 public class CategoryController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(MemberController.class);
-	
-	@Inject 
+
+	@Inject
 	private CategoryService cService;
-	
-	@Inject 
+
+	@Inject
 	private ProductService pService;
-	
-	// 1. 강아지 메인 페이지
-	@RequestMapping(value = "/dog_main", method = RequestMethod.GET)
-	public void getDogMain(Model model) throws Exception{
-		
-		List<ProductVO> pList = pService.productList("1");
-		model.addAttribute("ProductList",pList);
-		
-		logger.info("Dog 메인 페이지");
+
+	// 카테고리 별 메인 페이지
+	@RequestMapping(value = "/cate_main", method = RequestMethod.GET)
+	public String getCateMain(Model model, @RequestParam("cateName") String cateName) throws Exception {
+
+		List<ProductVO> pList = pService.productList(cateName);
+		model.addAttribute("ProductList", pList);
+
+		logger.info("CateName : " + cateName);
+
+		return "/" + cateName + "_main";
 	}
-	
+
 	// 강아지 종류별 상품 목록
 	@RequestMapping(value = "/dog_product_kind", method = RequestMethod.GET)
-	public String getDogKindMain(@RequestParam("kind") String kind, Model model) throws Exception{
-
-		List<ProductVO> pkindList = pService.productKindList("dog", kind);
-		model.addAttribute("roductKindList", pkindList);
+	public String getDogKindMain(@RequestParam("kind") String kind, Model model) throws Exception {
 		
-		return "redirect:/dog_main";
-			
+		String cateName = "dog";
+		
+		List<ProductVO> pkindList = pService.productKindList(cateName, kind);
+		model.addAttribute("ProductList", pkindList);
+
+		return "/dog_main";
+
+	}
+	
+	// 고양이 종류별 상품 목록
+	@RequestMapping(value = "/cat_product_kind", method = RequestMethod.GET)
+	public String getCatKindMain(@RequestParam("kind") String kind, Model model) throws Exception {
+		
+		String cateName = "cat";
+		
+		List<ProductVO> pkindList = pService.productKindList(cateName, kind);
+		model.addAttribute("ProductList", pkindList);
+		
+		return "/cat_main";
+		
+	}
+	
+	// 새 종류별 상품 목록
+	@RequestMapping(value = "/bird_product_kind", method = RequestMethod.GET)
+	public String getDirdKindMain(@RequestParam("kind") String kind, Model model) throws Exception {
+		
+		String cateName = "bird";
+		
+		List<ProductVO> pkindList = pService.productKindList(cateName, kind);
+		model.addAttribute("ProductList", pkindList);
+		
+		return "/bird_main";
+		
+	}
+	
+	// 파충류 종류별 상품 목록
+	@RequestMapping(value = "/rep_product_kind", method = RequestMethod.GET)
+	public String getRepKindMain(@RequestParam("kind") String kind, Model model) throws Exception {
+		
+		String cateName = "rep";
+		
+		List<ProductVO> pkindList = pService.productKindList(cateName, kind);
+		model.addAttribute("ProductList", pkindList);
+		
+		return "/rep_main";
+		
 	}
 }

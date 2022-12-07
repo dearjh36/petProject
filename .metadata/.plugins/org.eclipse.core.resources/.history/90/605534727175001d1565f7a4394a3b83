@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.CartMapper">
+
+	<!-- 카트 추가 -->
+	<insert id = "addCart">
+	<![CDATA[
+		insert into cart
+		values(#{cNum}, #{id}, #{pNum}, #{cnt})
+	]]>
+	</insert>
+	
+	<!-- 카트 삭제 -->
+	<delete id="deleteCart">
+		delete from cart where cNum = #{cNum}
+	</delete>
+	
+	<!-- 카트 수량 수정 -->
+	<update id="modifyCount">
+		update cart 
+		set cnt = #{cnt}
+		where cNum = #{cNum}
+	</update>
+	
+</mapper>

@@ -17,9 +17,9 @@ public class ProductServiceImpl implements ProductService {
 
 	// 상품 목록
 	@Override
-	public List<ProductVO> productList(String catecode) throws Exception {
+	public List<ProductVO> productList(String cateName) throws Exception {
 
-		List<ProductVO> result = dao.productList(catecode);
+		List<ProductVO> result = dao.productList(cateName);
 		return result;
 		
 	}
