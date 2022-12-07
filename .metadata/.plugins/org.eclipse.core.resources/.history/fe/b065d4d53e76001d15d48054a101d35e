@@ -1,0 +1,12 @@
+package com.pet.service;
+
+import java.util.HashMap;
+import java.util.List;
+
+import com.pet.model.P_orderVO;
+
+public interface OrderService {
+
+	// P_order 추가
+	public void insertOrder(P_orderVO poVO) throws Exception;
+}

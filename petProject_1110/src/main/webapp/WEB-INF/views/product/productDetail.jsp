@@ -41,8 +41,10 @@ $("body").on("click", "[id^=rdd]", function() {
 			<tr>
 				<th>수 량</th>
 				<td>
+				<form action="/order/${member.memberId}" method="get" class="order_form">			
 					<input type="number" name="cnt" id="cnt" maxlength="3" size="2" value="1" id="cn" onkeyup="changetotal()"> 
 					<input type="hidden" name="pNum" id="pNum" value="${productVO.pNum}">
+				</form>
 				</td>
 			</tr>
 			<tr>
@@ -61,8 +63,7 @@ $("body").on("click", "[id^=rdd]", function() {
 			</tr>
 		</table>
 		<div id="re_ing">
-			<input type="button" value="장바구니에 담기" class="submit" id="addCart"style="background: #373737; color: white">	
-				
+			<input type="button" value="장바구니에 담기" class="submit" id="addCart"style="background: #373737; color: white">					
 			<input type="button" value="즉시 구매" class="submit" onclick="goOrder2(${productVO.pNum})"> 
 			<input type="button" value="이전 페이지" class="cancel" onclick="history.go(-1)">
 		</div>

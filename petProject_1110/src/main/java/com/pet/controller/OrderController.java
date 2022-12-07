@@ -13,9 +13,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.pet.dao.OrderDao;
 import com.pet.model.CartDTO;
 import com.pet.model.MemberVO;
 import com.pet.service.CartService;
+import com.pet.service.OrderService;
 
 @Controller
 public class OrderController {
@@ -25,15 +27,17 @@ public class OrderController {
 	@Inject
 	private CartService cService;
 	
-	// 주문하기 
+	@Inject
+	private OrderService oService;
+	
+	// 주문하기 페이지
 	@RequestMapping(value = "/mypage/orderForm", method = RequestMethod.GET)
-	public void adminMainGET(HttpServletRequest req, Model model) throws Exception {
+	public void formOrderGET(HttpServletRequest req, Model model) throws Exception {
 		
 		HttpSession session = req.getSession();
 		MemberVO mVO = (MemberVO)session.getAttribute("member");
 		
 		String id = mVO.getId();
-		String cateName = mVO.getCateName();
 		int totalPrice = 0;
 		
 		List<CartDTO> cartList = cService.getCart(id);
@@ -45,5 +49,28 @@ public class OrderController {
 		model.addAttribute("cartList", cartList);
 		model.addAttribute("totalPrice", totalPrice);
 		model.addAttribute("user",mVO);
+	}
+	
+	// 장바구니에 주문하기 
+	@RequestMapping(value = "/mypage/orderForm", method = RequestMethod.GET)
+	public void insertOrderGET(HttpServletRequest req, Model model) throws Exception {
+		
+		HttpSession session = req.getSession();
+		MemberVO mVO = (MemberVO)session.getAttribute("member");
+		
+		String id = mVO.getId();
+		CartDTO cDTO;
+		
+		List<CartDTO> cartList = cService.getCart(id);
+		
+		oService.insertOrder(id);
+		
+		
+		int max = 
+
+		String name = req.getParameter("name");
+    	String phone =req.getParameter("phone");
+    	String addr =req.getParameter("address");
+		
 	}
 }

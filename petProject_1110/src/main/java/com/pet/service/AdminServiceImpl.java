@@ -1,8 +1,5 @@
 package com.pet.service;
 
-import java.util.HashMap;
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;

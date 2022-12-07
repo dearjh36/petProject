@@ -6,8 +6,16 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="web"/>
+		<item key="selection" value="cNum"/>
 		<list key="findhistory">
+			<item value="cNum"/>
+			<item value="go_order(${cart.cNum})"/>
+			<item value="Cancle"/>
+			<item value="p_order"/>
+			<item value="submit"/>
+			<item value="form"/>
+			<item value="formm"/>
+			<item value="button"/>
 			<item value="web"/>
 			<item value="cart"/>
 			<item value="_"/>
@@ -15,14 +23,6 @@
 			<item value="raa"/>
 			<item value="productKindList"/>
 			<item value="connector"/>
-			<item value="redirect"/>
-			<item value="productView"/>
-			<item value="num2"/>
-			<item value="file"/>
-			<item value="commons-io"/>
-			<item value="io"/>
-			<item value="multipart"/>
-			<item value="commons-fileupload"/>
 		</list>
 		<list key="replacehistory">
 			<item value="when"/>
