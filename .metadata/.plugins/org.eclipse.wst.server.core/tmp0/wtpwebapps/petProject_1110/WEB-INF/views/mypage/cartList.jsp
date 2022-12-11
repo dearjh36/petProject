@@ -45,7 +45,7 @@
 			</c:otherwise>
 		</c:choose>
 			<c:if test="${cartList.size() != 0}">
-				<input type="button" value="주문하기" id="order_btn" onclick="location.href='/mypage/orderForm'">
+				<input type="button" value="주문하기" id="order_btn" onclick="location.href='/mypage/cartOrderForm'">
 			</c:if>
 		</div>
 	</form>

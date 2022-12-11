@@ -4,7 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.pet.model.P_orderVO;
+import com.pet.model.OrderDTO;
 
 @Repository
 public class OrderDaoImpl implements OrderDao {
@@ -15,8 +15,13 @@ public class OrderDaoImpl implements OrderDao {
 	private static String namespace = "com.pet.mapper.OrderMapper";
 
 	@Override
-	public void insertOrder(String id) throws Exception {
-		sql.insert(namespace + ".insertOrder", id);
+	public void insertPOrder(OrderDTO dto) throws Exception {
+		sql.insert(namespace + ".insertOrder", dto);
+	}
+
+	@Override
+	public int getONum() throws Exception {
+		return sql.selectOne(namespace+".getONum");
 	}
 
 }

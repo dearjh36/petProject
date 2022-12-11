@@ -40,9 +40,9 @@ $("body").on("click", "[id^=rdd]", function() {
 			</tr>
 			<tr>
 				<th>수 량</th>
-				<td>
+				<td>				
 					<input type="number" name="cnt" id="cnt" maxlength="3" size="2" value="1" id="cn" onkeyup="changetotal()"> 
-					<input type="hidden" name="pNum" id="pNum" value="${productVO.pNum}">
+					<input type="hidden" name="pNum" id="pNum" value="${productVO.pNum}">				
 				</td>
 			</tr>
 			<tr>
@@ -61,9 +61,8 @@ $("body").on("click", "[id^=rdd]", function() {
 			</tr>
 		</table>
 		<div id="re_ing">
-			<input type="button" value="장바구니에 담기" class="submit" id="addCart"style="background: #373737; color: white">	
-				
-			<input type="button" value="즉시 구매" class="submit" onclick="goOrder2(${productVO.pNum})"> 
+			<input type="button" value="장바구니에 담기" class="submit" id="addCart"style="background: #373737; color: white">		
+			<input type="button" value="즉시 구매" class="submit" id="btn_buy"> 
 			<input type="button" value="이전 페이지" class="cancel" onclick="history.go(-1)">
 		</div>
 		
@@ -126,7 +125,19 @@ $("body").on("click", "[id^=rdd]", function() {
 						alert("로그인이 필요합니다.");	
 					}
 				}
-						
+				function changetotal(){
+					if(document.getElementById("cn").value && document.getElementById("pP").value){
+					     document.getElementById('to').value =inputNumberWithComma(parseInt(document.getElementById('cn').value) * parseInt(document.getElementById('pP').value));
+					     }
+					}
+				$("#btn_buy").on("click", function(e){
+					$.ajax({
+						url: '/order/productOrder',
+						type: 'GET',
+						data: form
+					})
+				});
+				
 			</script>	
 <div class="clear"></div>
 <%@ include file="../include/footer.jsp"%>

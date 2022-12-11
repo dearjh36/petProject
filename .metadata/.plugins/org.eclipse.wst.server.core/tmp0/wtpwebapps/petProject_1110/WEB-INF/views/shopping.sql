@@ -75,7 +75,11 @@ create table product(
 create table p_order(
 	oNum    number(10)   not null primary key,  	     	-- 상품 구매번호(시퀀스)
 	ID 	    varchar2(20) not null references join_User(ID),	-- 상품을 주문한 회원의 아이디
-	indate  date default sysdate							-- 주문 일자  				
+	indate  date default sysdate,							-- 주문 일자  				
+	oAddress     varchar2(300) not null,							-- 배송지
+	oPhone	     varchar2(20) not null,								-- 배송 받는분 연락처		
+	oName		 varchar2(20) not null,								-- 배송 받는분
+	state 	 varchar2(20) default '결제완료' not null   			-- 유저 화면에서 보는 주문 상태
 );
 
 create table cart(
@@ -90,12 +94,8 @@ create table o_detail(
 	oNum 		 number(10)   not null references p_order(oNum),	-- 상품 구매번호(시퀸스) FK p_order(oNum)
 	pNum 		 number(10)   references product(pNum),				-- 상품 번호(시퀸스) FK product(pNum)
 	cnt 		 number(5) 	  default 1,							-- 상품 주문 갯수
-	admin_state	 varchar2(20) default '주문완료' not null, 			-- 관리자 화면에서 보는 주문 상태
-	user_state 	 varchar2(20) default '결제완료' not null,   			-- 유저 화면에서 보는 주문 상태
-	result	 	 number(1)    default 1 not null ,					-- 리뷰 답변 확인용
-	oName		 varchar2(20) not null,								-- 배송 받는분
-	oAddress     varchar2(300) not null,							-- 배송지
-	oPhone	     varchar2(20) not null								-- 배송 받는분 연락처		
+	state 		 varchar2(20) default '결제완료' not null,   			-- 유저 화면에서 보는 주문 상태
+	result	 	 number(1)    default 1 not null 					-- 리뷰 답변 확인용	
 );
 
 create table qna(

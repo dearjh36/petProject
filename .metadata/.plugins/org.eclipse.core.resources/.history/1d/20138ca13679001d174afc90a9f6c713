@@ -1,0 +1,150 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="../include/header.jsp"%>
+<script type="text/javascript" src="/resources/product/product.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<style>
+.rbb{
+display:none;
+}
+.raa {
+background-color:#f5f5f5;
+}
+</style>
+<script>
+var vId;
+$("body").on("click", "[id^=rdd]", function() {
+   vId=this.id;
+   console.log(vId);
+   $("#raa"+vId).toggleClass("raa rbb");
+   });
+</script>
+<%!int num = 1;%>
+<!-- <form method="post" name="formm"> -->
+	<div id="Product_detail">
+		<a href="/product/productDetail?pNum=${productVO.pNum}">
+			<span><img src="/resources/images/product_img/${productVO.pImg}" /></span>
+		</a>
+		<div id="pro_title">${productVO.pName}</div>
+		<table id="pro_table">
+			<tr>
+				<th>제 조 사</th>
+				<td>${productVO.CP}</td>
+			</tr>
+			<tr>
+				<th>판 매 가</th>
+				<td>
+					<fmt:formatNumber value="${productVO.pPrice}" pattern="#,###,###" type="number" />원 
+					<input id="pP" name="pPrice" type='hidden' value="${productVO.pPrice}">
+				</td>
+			</tr>
+			<tr>
+				<th>수 량</th>
+				<td>				
+					<input type="number" name="cnt" id="cnt" maxlength="3" size="2" value="1" id="cn" onkeyup="changetotal()"> 
+					<input type="hidden" name="pNum" id="pNum" value="${productVO.pNum}">				
+				</td>
+			</tr>
+			<tr>
+				<th>배송비</th>
+				<td>무료</td>
+			</tr>
+			<tr>
+				<th>상품정보</th>
+				<td>${productVO.pInfo}</td>
+			</tr>
+			<tr>
+				<th>가격</th>
+				<td>
+					<input type="text" id="to" name="total" value="<fmt:formatNumber value ="${productVO.pPrice}"  pattern="#,###"/>" readOnly>
+				</td>
+			</tr>
+		</table>
+		<div id="re_ing">
+			<input type="button" value="장바구니에 담기" class="submit" id="addCart"style="background: #373737; color: white">		
+			<form action="/order/productOrder" method="get">	
+					<input type="number" name="orders[0].cnt" id="cnt" maxlength="3" size="2" value="1" id="cn" onkeyup="changetotal()"> 
+					<input type="hidden" name="orders[0].pNum" id="pNum" value="${productVO.pNum}">		
+			<input type="button" value="즉시 구매" class="submit" id="btn_buy" onclick="goOrder2(${productVO.pNum})"> 
+			</form>	
+			<input type="button" value="이전 페이지" class="cancel" onclick="history.go(-1)">
+		</div>
+		
+		<div id="review_table">
+			<h2>상품후기</h2>
+			<p></p>
+			<table>
+				<c:forEach items="${reviewList}" var="reviewVO" varStatus="status">
+					<tr>
+						<td>
+							<img src="/resources/images/review/${reviewVO.rating}.png" style="width: 71px; height: 12px;">
+						</td>
+						<td width="300">
+							<div id ="rdd${status.index}" class="1">
+								<a href="javascript:void(0);">${reviewVO.content}</a>
+							</div>
+						</td>
+						<td style="font-size: 0.8em">홈페이지 구매자 IP:***</td>
+						<td>
+							<fmt:formatDate value="${reviewVO.wDate}"></fmt:formatDate>
+						</td>
+					</tr>
+						<tr>
+							<td colspan='4'>
+								<div id="raardd${status.index}" class ="rbb">
+									<br>${reviewVO.content}<br><br>
+									<img src="/resources/review/${reviewVO.rImg}">
+								</div>
+							</td>
+						</tr>
+				</c:forEach>
+			</table>
+		</div>
+	</div>
+<!-- </form> -->
+<script>
+				const form = {
+						pNum : '${productVO.pNum}',
+						cnt : $("#cnt").val()
+				}
+			
+				$("#addCart").on("click", function(e){
+					$.ajax({
+						url: '/cart/add',
+						type: 'POST',
+						data: form,
+						success: function(result){
+							cartAlert(result);
+						}
+					})
+				});
+				function cartAlert(result){
+					if(result == '0'){
+						alert("장바구니에 추가를 하지 못하였습니다.");
+					} else if(result == '1'){
+						alert("장바구니에 추가되었습니다.");
+					} else if(result == '2'){
+						alert("장바구니에 이미 추가되어져 있습니다.");
+					} else if(result == '5'){
+						alert("로그인이 필요합니다.");	
+					}
+				}
+				function changetotal(){
+					if(document.getElementById("cn").value && document.getElementById("pP").value){
+					     document.getElementById('to').value =inputNumberWithComma(parseInt(document.getElementById('cn').value) * parseInt(document.getElementById('pP').value));
+					     }
+					}
+				
+				$("#btn_buy").on("click", function(e){
+					$.ajax({
+						url: '/cart/add',
+						type: 'POST',
+						data: form,
+						success: function(result){
+							cartAlert(result);
+						}
+					})
+				});
+			</script>	
+<div class="clear"></div>
+<%@ include file="../include/footer.jsp"%>

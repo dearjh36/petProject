@@ -1,0 +1,23 @@
+package com.pet.model;
+
+import java.sql.Timestamp;
+
+public class OrderDTO {
+	private int odNum; 
+	private int oNum;
+	private String ID; 
+	private Timestamp indate;
+	private	int pNum;
+	private int cnt;
+	private String name;
+	private String address;
+	private String phone;
+	private String pName;
+	private	int pPrice;
+	private String state;
+	private String oname;
+	private String oaddress;
+	private String ophone;
+	private int rank;
+	private String catename;
+}

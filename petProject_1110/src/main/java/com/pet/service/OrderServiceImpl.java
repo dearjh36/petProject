@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.pet.dao.OrderDao;
-import com.pet.model.P_orderVO;
+import com.pet.model.OrderDTO;
 
 @Service
 public class OrderServiceImpl implements OrderService{
@@ -14,8 +14,13 @@ public class OrderServiceImpl implements OrderService{
 	OrderDao oDao;
 
 	@Override
-	public void insertOrder(String id) throws Exception {
-		oDao.insertOrder(id);
+	public void insertPOrder(OrderDTO dto) throws Exception {
+		oDao.insertPOrder(dto);
+	}
+
+	@Override
+	public int getONum() throws Exception {
+		return oDao.getONum();
 	}
 	
 	

@@ -19,11 +19,7 @@ function goOrder2(pNum) {
 	document.formm.submit();
 }
 
-function changetotal(){
-if(document.getElementById("cn").value && document.getElementById("pP").value){
-     document.getElementById('to').value =inputNumberWithComma(parseInt(document.getElementById('cn').value) * parseInt(document.getElementById('pP').value));
-     }
-}
+
 
 function inputNumberWithComma(str) {
     str = String(str);

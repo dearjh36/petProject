@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.OrderMapper">
+
+	<insert id="insertOrder">
+	<![CDATA[
+		insert into P_order(oNum,id,oAddress,oPhone,oName) 
+		values (order_seq.nextVal, #{id})
+	]]>
+	</insert>
+	
+	<select id="getoNum()">
+		select max(oNum) from P_order
+	</select>
+</mapper>
