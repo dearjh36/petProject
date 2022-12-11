@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.OrderMapper">
+
+	<insert id="insertPOrder" >
+	<![CDATA[
+		insert into P_order(oNum,id,oAddress,oPhone,oName) 
+		values (order_seq.nextVal, #{ID},#{oaddress},#{ophone},#{oname})
+	]]>
+	</insert>
+	
+	<insert id="insertODetail">
+		insert into o_detail(odNum,oNum,pNum,cnt,result) 
+		values (detail_seq.nextVal, #{oNum},#{pNum},#{cnt},'0')
+	</insert>
+	
+	<select id="getONum" resultType="Integer">
+		select max(oNum) from P_order
+	</select>
+</mapper>

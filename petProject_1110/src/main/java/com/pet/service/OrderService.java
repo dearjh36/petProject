@@ -1,5 +1,7 @@
 package com.pet.service;
 
+import java.util.List;
+
 import com.pet.model.OrderDTO;
 
 public interface OrderService {
@@ -9,4 +11,13 @@ public interface OrderService {
 
 	// oNum 값 가져오기
 	public int getONum() throws Exception;
+
+	// O_Detail 추가
+	public void insertODetail(OrderDTO dto) throws Exception;
+
+	// 주문리스트
+	public List<OrderDTO> orderList(int oNum, String id) throws Exception;
+
+	// 주문번호 리스트
+	public List<Integer> ONumList(String id) throws Exception;
 }

@@ -70,39 +70,37 @@ function goReviewUpdate(odNum,pNum){
 					<td>${orderVO.cnt}</td>
 					<td><fmt:formatNumber type="currency"
 							value="${orderVO.pPrice*orderVO.cnt}" /></td>
-					<td><c:choose>
-							<c:when test='${orderVO.user_state=="결제완료"}'>
-								<c:choose>
-									<c:when test='${orderVO.admin_state=="주문완료"}'> 주문완료 </c:when>
-								</c:choose>
+					<td>
+						<c:choose>
+							<c:when test='${orderVO.state=="결제완료"}'> 
+								주문완료 								
 							</c:when>
-							<c:otherwise>
-								<c:choose>
-									<c:when test='${orderVO.admin_state=="취소처리"}'>
-										<span style='color: red'> 취소완료 </span>
-									</c:when>
-									<c:when test='${orderVO.admin_state=="취소요청"}'>
-										<span style='color: red'> 취소요청 </span>
-									</c:when>
-									<c:otherwise>
-										<span style='color: red'>취소완료</span>
-									</c:otherwise>
-								</c:choose>
-							</c:otherwise>
+						<c:otherwise>
+							<c:choose>
+								<c:when test='${orderVO.state=="취소처리"}'>
+									<span style='color: red'> 취소완료 </span>
+								</c:when>
+								<c:when test='${orderVO.state=="취소요청"}'>
+									<span style='color: red'> 취소요청 </span>
+								</c:when>
+								<c:otherwise>
+									<span style='color: red'>취소완료</span>
+								</c:otherwise>
+							</c:choose>
+						</c:otherwise>
 						</c:choose></td>
 
-					<td><c:choose>
-							<c:when test='${orderVO.user_state=="취소요청"}'>
-								취소 요청 중 
-							</c:when>
-							<c:when test='${orderVO.result==1}'>
-								<input type="button" value="리뷰작성 " class="re_write_go"
-									style="background-color: mistyrose"
-									onclick="goReview('${orderVO.pNum}','${orderVO.result}','${orderVO.odNum}')">
-							</c:when>
-							<c:when test='${orderVO.result==3}'>
-								취소 완료
-							</c:when>
+					<td>
+					<c:choose>
+						<c:when test='${orderVO.state=="취소요청"}'>
+							취소 요청 중 
+						</c:when>
+						<c:when test='${orderVO.result==1}'>
+<input type="button" value="리뷰작성 " class="re_write_go" style="background-color: mistyrose" onclick="goReview('${orderVO.pNum}','${orderVO.result}','${orderVO.odNum}')">
+						</c:when>
+						<c:when test='${orderVO.result==3}'>
+							취소 완료
+						</c:when>
 
 							<c:otherwise>
                   리뷰 작성 완료&nbsp;<input type="button" value="리뷰수정 "
@@ -112,11 +110,11 @@ function goReviewUpdate(odNum,pNum){
 						</c:choose></td>
 
 					<td><c:choose>
-							<c:when test="${orderVO.user_state=='결제완료'}">
+							<c:when test="${orderVO.state=='결제완료'}">
 								<input type="button" value="주문취소" class="re_write_go"
-									onclick="goCancle('${orderVO.odNum}','${orderVO.user_state}')">
+									onclick="goCancle('${orderVO.odNum}','${orderVO.state}')">
 							</c:when>
-							<c:when test="${orderVO.user_state=='취소요청'}">
+							<c:when test="${orderVO.state=='취소요청'}">
                  				 취소 요청 중
                   </c:when>
 							<c:otherwise>

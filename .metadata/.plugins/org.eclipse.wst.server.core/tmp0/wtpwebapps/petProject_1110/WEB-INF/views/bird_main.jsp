@@ -44,7 +44,7 @@ s0.parentNode.insertBefore(s1,s0);
 	<div id="Product">
 		<c:forEach items="${ProductList}" var="productVO">
 			<div id="item">
-				<a href="/product_detail&pNum=${productVO.pNum}">
+				<a href="/product/productDetail?pNum=${productVO.pNum}">
 					<img src="/resources/images/product_img/${productVO.pImg}" />
 					<h3>${productVO.pName}</h3>
 					<fmt:formatNumber value="${productVO.pPrice}" pattern="#,###,###" type="number"/>원
@@ -53,16 +53,6 @@ s0.parentNode.insertBefore(s1,s0);
 			</div>
 		</c:forEach>
 		
-		<c:forEach items="${productKindList}" var="kindList">
-			<div id="item">
-				<a href="MypetServlet?command=product_detail&pNum=${kindList.pNum}">
-					<img src="/resources/images/product_img/${kindList.pImg}" />
-					<h3>${kindList.pName}</h3>
-					<fmt:formatNumber value="${kindList.pPrice}" pattern="#,###,###" type="number"/>원
-					
-				</a>
-			</div>
-		</c:forEach>
 	</div>
 
 	<div class="clear"></div>

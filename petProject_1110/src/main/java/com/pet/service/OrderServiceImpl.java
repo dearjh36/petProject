@@ -1,5 +1,7 @@
 package com.pet.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -21,6 +23,21 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public int getONum() throws Exception {
 		return oDao.getONum();
+	}
+
+	@Override
+	public void insertODetail(OrderDTO dto) throws Exception {
+		oDao.insertODetail(dto);
+	}
+
+	@Override
+	public List<OrderDTO> orderList(int oNum, String id) throws Exception {
+		return oDao.orderList(oNum,id);
+	}
+
+	@Override
+	public List<Integer> ONumList(String id) throws Exception {
+		return oDao.ONumList(id);
 	}
 	
 	

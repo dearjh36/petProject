@@ -14,7 +14,7 @@
         <td> ${orderVO.oNum} </td>    
         <td> ${orderVO.pName} </td>
         <td> <fmt:formatNumber value="${orderVO.pPrice}" type="currency"/> </td>
-        <td> <a href="MypetServlet?command=order_detail&oNum=${orderVO.oNum}"> 조회 </a></td>
+        <td> <a href="/mypage/orderDetail?oNum=${orderVO.oNum}"> 조회 </a></td>
       </tr>
       </c:forEach>    
       </table>   
@@ -23,13 +23,13 @@
       <div id="order_ing" style="float: right">
       <c:choose>
       	<c:when test="${cateName eq 'none'}">
-       <input type="button" value="쇼핑 계속하기" id="null_ing"  onclick="location.href='MypetServlet?command=index'">
+       <input type="button" value="쇼핑 계속하기" id="null_ing"  onclick="location.href='/'">
       	</c:when>
       	<c:otherwise>
-       <input type="button" value="쇼핑 계속하기" id="null_ing"  onclick="location.href='MypetServlet?command=${cateName}'">
+       <input type="button" value="쇼핑 계속하기" id="null_ing"  onclick="location.href='/cate_main?cateName=${cateName}'">
        </c:otherwise>
       </c:choose>
-       <input type="button"    value="회원정보 수정"  class="cancel"  onclick="location.href='MypetServlet?command=update_user_form'"> 
+       <input type="button" value="회원정보 수정"  class="cancel"  onclick="location.href='MypetServlet?command=update_user_form'"> 
       </div>
     </form>  
   </article>

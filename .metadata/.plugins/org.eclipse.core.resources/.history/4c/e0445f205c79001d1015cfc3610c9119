@@ -1,0 +1,46 @@
+package com.pet.service;
+
+import java.util.List;
+
+import javax.inject.Inject;
+
+import org.springframework.stereotype.Service;
+
+import com.pet.dao.OrderDao;
+import com.pet.model.OrderDTO;
+
+@Service
+public class OrderServiceImpl implements OrderService{
+	
+	@Inject
+	OrderDao oDao;
+
+	@Override
+	public void insertPOrder(OrderDTO dto) throws Exception {
+		oDao.insertPOrder(dto);
+	}
+
+	@Override
+	public int getONum() throws Exception {
+		return oDao.getONum();
+	}
+
+	@Override
+	public void insertODetail(OrderDTO dto) throws Exception {
+		oDao.insertODetail(dto);
+	}
+
+	@Override
+	public List<OrderDTO> orderList(int oNum) throws Exception {
+		return oDao.orderList(oNum);
+	}
+
+	@Override
+	public List<OrderDTO> ONumList(String id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

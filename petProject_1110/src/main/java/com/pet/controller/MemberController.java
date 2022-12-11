@@ -1,5 +1,8 @@
 package com.pet.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -7,13 +10,16 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.pet.model.MemberVO;
+import com.pet.model.OrderDTO;
 import com.pet.service.MemberService;
+import com.pet.service.OrderService;
 
 @Controller
 public class MemberController {
@@ -21,6 +27,9 @@ public class MemberController {
 
 	@Inject
 	private MemberService mService;
+
+	@Inject
+	private OrderService oService;
 
 	// 회원가입 GET
 	@RequestMapping(value = "/member/contract", method = RequestMethod.GET)
@@ -99,27 +108,45 @@ public class MemberController {
 	public String memberIdChkPOST(String memberId) throws Exception {
 
 		logger.info("memberIdChk() 진입");
-
 		int result = mService.idCheck(memberId);
-
 		logger.info("결과값 = " + result);
-
 		if (result != 0) {
-
 			return "fail"; // 중복 아이디가 존재
-
 		} else {
-
 			return "success"; // 중복 아이디 x
-
 		}
-
 	} // memberIdChkPOST() 종료
 
 	// 마이페이지
 	@RequestMapping(value = "/mypage/mypage", method = RequestMethod.GET)
-	public void myPageGET(HttpSession session) throws Exception {
+	public void myPageGET(HttpServletRequest req, Model model) throws Exception {
 
+		HttpSession session = req.getSession();
+		MemberVO mVO = (MemberVO) session.getAttribute("member");
+
+		String id = mVO.getId();
+		String cateName = mVO.getCateName();
+
+		System.out.println("myPage Id : " + id);
+		List<Integer> oNumList = oService.ONumList(id);
+		ArrayList<OrderDTO> orderList = new ArrayList<OrderDTO>();
+
+		for (int oNum : oNumList) {
+			List<OrderDTO> orderList2 = oService.orderList(oNum, id);
+			OrderDTO Odto = orderList2.get(0);
+			Odto.setpName(Odto.getpName() + " 외 " + orderList2.size() + "건");
+			
+			int totalPrice = 0;
+			for(OrderDTO Odto2 : orderList2) {
+				totalPrice += Odto2.getpPrice() * Odto.getCnt();
+			}
+			
+			Odto.setpPrice(totalPrice);
+			orderList.add(Odto);
+		}
 		
+		model.addAttribute("orderList",orderList);
+		model.addAttribute("cateName",cateName);
+
 	}
 }

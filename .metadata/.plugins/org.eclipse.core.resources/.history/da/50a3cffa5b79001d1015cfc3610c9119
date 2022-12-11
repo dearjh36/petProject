@@ -1,0 +1,20 @@
+package com.pet.dao;
+
+import java.util.List;
+
+import com.pet.model.OrderDTO;
+
+public interface OrderDao {
+
+	// P_order 추가
+	public void insertPOrder(OrderDTO dto) throws Exception;
+
+	// oNum 값 가져오기
+	public int getONum() throws Exception;
+
+	// O_Detail 추가
+	public void insertODetail(OrderDTO dto) throws Exception;
+	
+	// 주문리스트
+	public List<OrderDTO> orderList(int oNum) throws Exception;
+}

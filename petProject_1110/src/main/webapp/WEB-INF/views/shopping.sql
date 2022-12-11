@@ -137,8 +137,7 @@ where c.id = u.id and c.pNum_cart = p.pNum;
 create or replace view order_view
 as
 select d.odNum, o.oNum ,j.ID, o.indate , d.pNum , d.cnt ,
-j.name, d.oname, d.oaddress, d.ophone, p.pName , p.pPrice ,d.result, j.address , j.phone , 
-d.user_state , d.admin_state
+j.name, d.oname, d.oaddress, d.ophone, p.pName , p.pPrice ,d.result, j.address , j.phone , d.admin_state
 from p_order o, o_detail d, product p, Member j
 where o.ID = j.ID and d.pNum = p.pNum and o.onum = d.onum;
 

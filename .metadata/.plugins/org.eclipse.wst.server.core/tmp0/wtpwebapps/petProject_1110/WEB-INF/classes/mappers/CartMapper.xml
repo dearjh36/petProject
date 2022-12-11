@@ -39,5 +39,6 @@
 		where id = #{id} and pNum = #{pNum}
 	
 	</select>
+	
 
 </mapper>

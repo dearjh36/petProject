@@ -1,9 +1,0 @@
-package com.pet.util;
-
-public class UploadFileUtils {
-	
-	public static String fileUpload(String uploadPath, String fileName, byte[] fileData, String ymdPath) throws Exception{
-		return ymdPath;		
-	}
-
-}
