@@ -1,0 +1,14 @@
+package com.pet.dao;
+
+import java.util.List;
+
+import com.pet.model.QnaVO;
+
+public interface QnaDao {
+
+	// 장바구니 목록
+	public List<QnaVO> qnaList() throws Exception;
+	
+	// mtm 목록
+	public List<MtmVO> mtmList() throws Exception;
+}

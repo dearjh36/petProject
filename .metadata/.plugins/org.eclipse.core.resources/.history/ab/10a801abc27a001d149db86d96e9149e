@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.pet.mapper.QnaMapper">
+	<select id="qnaList" resultType = "com.pet.model.QnaVO">
+		select * from qna
+	</select>
+	
+	<select id="mtmList" resultType = "com.pet.model.MtmVO">
+		select * from qna
+	</select>
+</mapper>

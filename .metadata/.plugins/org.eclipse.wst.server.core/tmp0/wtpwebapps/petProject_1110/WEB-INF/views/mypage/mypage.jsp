@@ -29,7 +29,7 @@
        <input type="button" value="쇼핑 계속하기" id="null_ing"  onclick="location.href='/cate_main?cateName=${cateName}'">
        </c:otherwise>
       </c:choose>
-       <input type="button" value="회원정보 수정"  class="cancel"  onclick="location.href='MypetServlet?command=update_user_form'"> 
+       <input type="button" value="회원정보 수정"  class="cancel"  onclick="location.href='/mypage/userUpdate'"> 
       </div>
     </form>  
   </article>

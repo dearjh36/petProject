@@ -27,7 +27,7 @@
 	<div class="clear"></div>
 	<div id="ing" style="float:right">
 	<input type="button" value="글쓰기" class="submit" onclick="location.href='MypetServlet?command=mtm_write_form'">
-	<input type="button" value="쇼핑계속하기" class="cancel" onclick="location.href='MypetServlet?command=index'">
+	<input type="button" value="쇼핑계속하기" class="cancel" onclick="location.href='/'">
 </div>
 </form></article>
 <div class="clear"></div>

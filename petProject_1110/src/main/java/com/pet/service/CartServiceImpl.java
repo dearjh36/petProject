@@ -51,8 +51,7 @@ public class CartServiceImpl implements CartService {
 	@Override
 	public List<CartDTO> getCart(String id) throws Exception {
 		
-		List<CartDTO> cart = dao.getCart(id);
-		
+		List<CartDTO> cart = dao.getCart(id);		
 		
 		return cart;
 	}

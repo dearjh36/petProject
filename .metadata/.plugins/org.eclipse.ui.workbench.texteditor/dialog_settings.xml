@@ -6,33 +6,33 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="rating"/>
+		<item key="selection" value="pNum"/>
 		<list key="findhistory">
+			<item value="pNum"/>
+			<item value="rNum"/>
+			<item value="odNum"/>
+			<item value="mult"/>
+			<item value="upload"/>
+			<item value="goReview"/>
+			<item value="처리 상태"/>
+			<item value="처리상태"/>
+			<item value="cjfltkdxo"/>
+			<item value="result"/>
+			<item value="state"/>
+			<item value="title"/>
+			<item value="orderList"/>
+			<item value="name"/>
 			<item value="rating"/>
-			<item value="rank"/>
-			<item value="cart_view"/>
-			<item value="to"/>
-			<item value="pP"/>
-			<item value="cn"/>
-			<item value="cNum"/>
-			<item value="go_order(${cart.cNum})"/>
-			<item value="Cancle"/>
-			<item value="p_order"/>
-			<item value="submit"/>
-			<item value="form"/>
-			<item value="formm"/>
-			<item value="button"/>
-			<item value="web"/>
 		</list>
 		<list key="replacehistory">
 			<item value="when"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="1419"/>
-		<item key="DIALOG_Y_ORIGIN" value="66"/>
+		<item key="DIALOG_X_ORIGIN" value="1205"/>
+		<item key="DIALOG_Y_ORIGIN" value="279"/>
 		<item key="DIALOG_WIDTH" value="288"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
 	</section>
 </section>

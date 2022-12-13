@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<script type="text/javascript" src="mypage/mypage.js"></script>
+<script type="text/javascript" src="/resources/mypage.js"></script>
 <script>
 function go_delete(){
 var con_test = confirm("탈퇴하시겠습니까?");

@@ -1,0 +1,27 @@
+package com.pet.dao;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.pet.model.ReviewVO;
+
+@Repository
+public class ReviewDaoImpl implements ReviewDao {
+
+	@Autowired
+	private SqlSession sql;
+
+	private static String namespace = "com.pet.mapper.ReviewMapper";
+
+	@Override
+	public void insertWrite(ReviewVO vo) throws Exception {
+		sql.insert(namespace + ".insertWrite", vo);
+	}
+
+	@Override
+	public void modifyResult(int odNum) throws Exception {
+		sql.update(namespace + ".modifyResult", odNum);
+	}
+
+}

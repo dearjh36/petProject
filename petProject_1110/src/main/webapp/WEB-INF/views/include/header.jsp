@@ -32,12 +32,12 @@ function go_search() {
 							<li style="color: orange; transform:translateY(-10px)">
 								${sessionScope.member.name}님(${sessionScope.member.id})</li>
 							<li><a href="/member/logout.do">로그아웃</a></li>
+							<li><a href="/mypage/cartList">장바구니</a></li>
+							<li><a href="/mypage/mypage">마이페이지</a></li>
+							<li><a href="/qna/qnaList">고객센터</a></li>
 						</c:otherwise>
 					</c:choose>
 
-					<li><a href="/mypage/cartList">장바구니</a></li>
-					<li><a href="/mypage/mypage">마이페이지</a></li>
-					<li><a href="MypetServlet?command=qna_list">고객센터</a></li>
 				</ul>
 			</div>
 			

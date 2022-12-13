@@ -1,0 +1,9 @@
+package com.pet.service;
+
+import com.pet.model.ReviewVO;
+
+public interface ReviewService {
+	
+	// 리뷰 작성
+		public void insertWrite(ReviewVO vo) throws Exception;
+}

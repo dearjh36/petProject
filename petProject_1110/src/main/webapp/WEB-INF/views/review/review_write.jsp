@@ -5,22 +5,16 @@
 <%
 	int odNum = Integer.parseInt(request.getParameter("odNum"));
 %>
-<script>
-	function go_review_insert() {
-		document.formm.action = "MypetServlet?command=review_insert&pNum=${pNum}&odNum="+<%=odNum%>;
-		document.formm.submit()
-	}
-</script>
+
 <article id="review_write">
 	<h2>리뷰 등록</h2>
 	<p></p>
-	<form name="formm" action="MypetServlet?command=review_insert"
-		method="post" enctype="multipart/form-data">
+	<form name="formm" action="/review/review_write" method="post" enctype="multipart/form-data">
 		<table id="re_write">
 			<tr>
 				<th>상품명</th>
 				<td>${pName}</td>
-				<td><input type="hidden" value=<%=odNum%> name="odNum"></td>
+				<td><input type="hidden" value=<%=odNum%> name="odNum"><input type="hidden" value="${pNum}" name="pNum"></td>
 			<tr>
 				<th>내용</th>
 				<td><textarea name="content" cols="49" rows="10"></textarea></td>
@@ -36,14 +30,12 @@
 				</td>
 			<tr>
 				<th>상품이미지</th>
-				<td colspan="5"><input type="file" name="rImg"></td>
+				<td colspan="5"><input type="file" name="fileImg"></td>
 				
 			</tr>
 		</table>
-		<div id="ing" style="float: right">
 			<input type="reset" value="취소" id="review_cancle">
-			<input type="button" value="등록" onclick="go_review_insert()" id="review_btn">
-		</div>
+			<input type="submit" value="등록" id="review_btn">
 	</form>
 </article>
 <div class="clear"></div>

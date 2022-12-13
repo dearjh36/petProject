@@ -2,24 +2,14 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
 <%@ include file="../include/navi_dog.jsp"%>
-<script>
-function go_review_update(rNum,pNum) {
-	var pN = pNum;
-	var rN = rNum;
-	document.formm.action = "MypetServlet?command=review_update&rNum=" + rN + "&pNum=" + pN;
-	document.formm.submit()
-}
-</script>
-
 <article id="review_write">
 	<h2>리뷰 수정</h2>
 	<p>
-	<form name="formm" action="MypetServlet?command=review_update"
-		method="post" enctype="multipart/form-data">
+	<form name="formm" action="/review/review_update" method="post" enctype="multipart/form-data">
 		<table id="re_write">
 			<tr>
 				<th>상품이름</th>
-				<td>${pName}<input type="hidden" value="${pName}" name="pName"></td>
+				<td>${pName}<input type="hidden" value="${review.pNum}" name="pNum"><input type="hidden" value="${review.rNum}" name="rNum"></td>
 			<tr>
 				<th>내용</th>
 				<td><textarea name="content" cols="49" rows="10">${review.content}</textarea></td>
@@ -56,11 +46,8 @@ function go_review_update(rNum,pNum) {
 				<td width="600" colspan="5"><input type="file" name="rImg" value="${review.rImg}"></td>
 			</tr>
 		</table>
-		<div id="ing" style="float: right"> 
 		<input id="review_cancle" type="reset" value="취소">
-			<input type="button" value="업데이트" id="review_btn"
-			onclick="go_review_update('${review.rNum}','${review.pNum}')">
-		</div>
+			<input type="submit" value="업데이트" id="review_btn" >
 	</form>
 </article>
 <div class="clear"></div>

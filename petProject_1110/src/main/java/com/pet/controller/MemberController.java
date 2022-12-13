@@ -59,6 +59,14 @@ public class MemberController {
 		logger.info("회원가입 성공");
 	}
 
+	// 회원정보 수정
+	@RequestMapping(value = "/mypage/userUpdate", method = RequestMethod.GET)
+	public void getMemberUpdate() throws Exception {
+		logger.info("get 회원정보 수정 페이지");
+		
+		
+	}
+	
 	// 로그인 GET
 	@RequestMapping(value = "/member/login", method = RequestMethod.GET)
 	public void getLogin() throws Exception {

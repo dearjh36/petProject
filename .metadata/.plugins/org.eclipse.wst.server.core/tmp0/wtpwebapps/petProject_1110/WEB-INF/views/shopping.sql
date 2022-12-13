@@ -149,6 +149,6 @@ where p.cateCode = c.cateCode;
 
 create or replace view re_view
 as
-select p.pNum, o.USER_STATE , r.rNum , r.ID, r.content, r.rImg, r.wDate, r.rating
+select p.pNum, o.state , r.rNum , r.ID, r.content, r.rImg, r.wDate, r.rating
 from product p, review r, o_detail o
 where r.pNum = p.pNum and r.odnum=o.odnum;

@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../include/header.jsp"%>
-<script type="text/javascript" src="mypage/mypage.js"></script>
+<script type="text/javascript" src="/resources/mypage.js"></script>
 <script>
 function goReview(pNum,result,odNum){
 	   var re = result;
 	   var od = odNum;
 	   if(re==1){
 	      
-	   document.formm.action = "MypetServlet?command=review_write&pNum="+pNum+"&odNum="+od;
+	   document.formm.action = "/review/review_write?pNum="+pNum+"&odNum="+od;
 	   document.formm.submit();
 	   }else {
 	      alert("이미 리뷰 작성하셨습니다.")
@@ -18,13 +18,13 @@ function goReview(pNum,result,odNum){
 function goReviewUpdate(odNum,pNum){
 	   var od = odNum;
 	   var pN = pNum;
-	   document.formm.action = "MypetServlet?command=review_update_form&odNum="+od+"&pNum="+pN;
+	   document.formm.action = "/review/review_update?odNum="+od+"&pNum="+pN;
 	   document.formm.submit();
 }
 </script>
 <article>
 	<h2>마이페이지(상세정보)</h2>
-	<form name="formm" method="post">
+	<form name="formm" method="get">
 		<h3 class="order_info">배송 정보</h3>
 		<table id="cartList">
 			<tr style="background-color:#E4F7BA">
@@ -132,7 +132,7 @@ function goReviewUpdate(odNum,pNum){
 		<div class="clear"></div>
 		<div>
 			<input type="button" value="쇼핑 계속하기" id="my_ing"
-				onclick="location.href='MypetServlet?command=index'">
+				onclick="location.href='/'">
 		</div>
 	</form>
 </article>

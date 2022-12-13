@@ -6,11 +6,9 @@
     <fullyQualifiedTypeName name="com.pet.service.MemberService"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMethod"/>
     <fullyQualifiedTypeName name="com.pet.dao.CategoryDao"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Repository"/>
     <fullyQualifiedTypeName name="com.pet.controller.CategoryController"/>
     <fullyQualifiedTypeName name="com.pet.service.CategoryService"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.slf4j.Logger"/>
     <fullyQualifiedTypeName name="com.pet.service.ProductService"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.support.RedirectAttributes"/>
@@ -27,7 +25,16 @@
     <fullyQualifiedTypeName name="com.pet.dao.CartDao"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestParam"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="com.pet.model.P_orderVO"/>
     <fullyQualifiedTypeName name="com.pet.service.OrderService"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletContext"/>
+    <fullyQualifiedTypeName name="org.springframework.web.multipart.MultipartRequest"/>
+    <fullyQualifiedTypeName name="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"/>
+    <fullyQualifiedTypeName name="com.oreilly.servlet.MultipartRequest"/>
+    <fullyQualifiedTypeName name="com.pet.util.UploadFileUtils2"/>
+    <fullyQualifiedTypeName name="oracle.net.aso.r"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

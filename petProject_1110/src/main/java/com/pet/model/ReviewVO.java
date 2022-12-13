@@ -11,7 +11,7 @@ public class ReviewVO {
 	 private String rating;
 	 private int pNum;
 	 private int odNum;
-	 private String USER_STATE;
+	 private String state;
 	 
 	public int getrNum() {
 		return rNum;
@@ -55,23 +55,21 @@ public class ReviewVO {
 	public void setpNum(int pNum) {
 		this.pNum = pNum;
 	}
-	public String getUSER_STATE() {
-		return USER_STATE;
-	}
-	public void setUSER_STATE(String uSER_STATE) {
-		USER_STATE = uSER_STATE;
-	}
 	public int getOdNum() {
 		return odNum;
 	}
 	public void setOdNum(int odNum) {
 		this.odNum = odNum;
 	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
 	@Override
 	public String toString() {
 		return "ReviewVO [rNum=" + rNum + ", ID=" + ID + ", content=" + content + ", rImg=" + rImg + ", wDate=" + wDate
-				+ ", rating=" + rating + ", pNum=" + pNum + ", odNum=" + odNum + ", USER_STATE=" + USER_STATE + "]";
+				+ ", rating=" + rating + ", pNum=" + pNum + ", odNum=" + odNum + ", state=" + state + "]";
 	}
-	
-	
 }

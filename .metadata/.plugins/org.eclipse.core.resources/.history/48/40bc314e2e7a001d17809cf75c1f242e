@@ -1,0 +1,10 @@
+package com.pet.dao;
+
+import com.pet.model.ReviewVO;
+
+public interface ReviewDao {
+	
+	// 리뷰 작성
+	public void insertWrite(ReviewVO vo)throws Exception;
+	
+}
