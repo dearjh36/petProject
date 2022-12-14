@@ -12,6 +12,9 @@ public interface ProductService {
 	// 전체 상품 목록
 	public List<ProductVO> productAllList() throws Exception;
 
+	// 상품 이름 검색
+	public List<ProductVO> productName(String pName) throws Exception;
+
 	// 전체 상품 목록 + 페이징
 	public List<ProductVO> productAllListPage(int displayPost) throws Exception;
 

@@ -1,5 +1,0 @@
-package com.pet.interceptor;
-
-public class CartInterceptor {
-
-}

@@ -5,7 +5,7 @@
     <%@ include file="../include/header.jsp" %>
 <article>
 <h2>1:1 문의 게시판</h2>
-<form name="formm" method="post">
+<form name="formm" method="get" action="/mtm/mtmWrite">
 	<table id="cartList">
 		<tr style="background-color:aliceblue">
 			<th>번호</th> <th>제목</th> <th>등록일</th> <th>답변여부</th>
@@ -26,7 +26,7 @@
 	</table>
 	<div class="clear"></div>
 	<div id="ing" style="float:right">
-	<input type="button" value="글쓰기" class="submit" onclick="location.href='MypetServlet?command=mtm_write_form'">
+	<input type="submit" value="글쓰기" class="submit">
 	<input type="button" value="쇼핑계속하기" class="cancel" onclick="location.href='/'">
 </div>
 </form></article>

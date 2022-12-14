@@ -20,4 +20,6 @@ public interface OrderDao {
 	
 	// 주문번호 리스트
 	public List<Integer> ONumList(String id) throws Exception;
+	
+	public void orderCancel(int odNum) throws Exception;
 }

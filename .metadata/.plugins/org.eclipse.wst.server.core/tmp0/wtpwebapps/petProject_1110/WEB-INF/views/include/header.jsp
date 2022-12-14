@@ -7,24 +7,17 @@
 <head>
 <meta charset="UTF-8">
 <title>welcome pet</title>
-<script>
-function go_search() {
-	var theForm = document.frm;
-	theForm.action = "MypetServlet?command=search";
-	theForm.submit();
-}
-</script>
 <link href="/resources/css/mypet.css" rel="stylesheet">
 </head>
 <body>
-<form name="frm" method="post">
+<form name="frm" method="post" action = "/product/productList">
 	<div id="wrap">
 		<header>
 			<div id="catagory_menu">
 				<ul class="right_menu">
 					<c:choose>
 						<c:when test="${empty sessionScope.member}">
-							<li><a href="/member/login.do">로그인</a></li>
+							<li><a href="/member/login">로그인</a></li>
 
 							<li><a href="/member/contract">회원가입</a></li>
 						</c:when>
@@ -49,8 +42,8 @@ function go_search() {
 			
 			<div class="search_area">
 				<div class="search_form">
-					<input type="text" name="searchValue" class="searchTerm" placeholder="원하는 상품을 검색해보세요."> 
-					<button class="searchButton" type="submit" name="btn_search" value="검색" onClick="go_search()">
+					<input type="text" name="searchValue" class="searchTerm" placeholder="원하는 상품을 검색해보세요." required> 
+					<button class="searchButton" type="submit" name="btn_search" value="검색">
 						<i class="search"></i>
 					</button>
 				</div>

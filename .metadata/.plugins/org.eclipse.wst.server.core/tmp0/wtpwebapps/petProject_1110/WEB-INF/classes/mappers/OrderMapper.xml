@@ -29,4 +29,8 @@
 		select distinct oNum from order_view where id = #{id} order by oNum desc
 	</select>
 	
+	<update id="orderCancel">
+		update o_detail set state = '취소요청' where odNum = #{odNum}
+	</update>
+
 </mapper>

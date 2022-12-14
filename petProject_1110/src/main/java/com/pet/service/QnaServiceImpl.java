@@ -27,6 +27,11 @@ public class QnaServiceImpl implements QnaService{
 		List<MtmVO> mtm = dao.mtmList(id);
 		return mtm;
 	}
+
+	@Override
+	public void mtmInsert(MtmVO vo) throws Exception {
+		dao.mtmInsert(vo);
+	}
 	
 
 }

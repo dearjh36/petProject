@@ -10,7 +10,7 @@
   }
 	
 	function go_search4() {
-		document.frm.action = "MypetServlet?command=order_Ranklist";
+		document.frm.action = "/admin/p_order/p_RankList";
 		document.frm.submit();
 	}
 	
@@ -38,7 +38,7 @@
   </tr>
   <c:forEach items="${join_UserList}" var="join_userVO">  
   <tr>
-    <td>${join_userVO.ID} 
+    <td>${join_userVO.id} 
     </td>
     <td> ${join_userVO.name} </td>
     <td> ${join_userVO.email} </td> 

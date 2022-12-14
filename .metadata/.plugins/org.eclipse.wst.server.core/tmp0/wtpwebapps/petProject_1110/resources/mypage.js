@@ -12,7 +12,7 @@ function goCancle(odNum,user_state){
    if(state == state2){
    var result = confirm("취소하시겠습니까??");
       if(result){
-         document.formm.action = "MypetServlet?command=order_cancle&odNum="+odNum;
+         document.formm.action = "/mypage/orderCancel";
          document.formm.submit();
       }else{
          alert("주문취소 요청을 취소했습니다.");

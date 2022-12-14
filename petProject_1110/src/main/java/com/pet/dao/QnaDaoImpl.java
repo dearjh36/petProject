@@ -28,4 +28,9 @@ public class QnaDaoImpl implements QnaDao {
 		return sql.selectList(namespace + ".mtmList", id);
 	}
 
+	@Override
+	public void mtmInsert(MtmVO vo) throws Exception {
+		sql.insert(namespace+".mtmInsert",vo);
+	}
+
 }

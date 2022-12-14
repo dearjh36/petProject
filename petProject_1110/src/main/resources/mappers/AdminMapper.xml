@@ -13,6 +13,49 @@
 	]]>
 	</insert>
 	
+	<select id = "PriceRank" resultType="com.pet.model.OrderDTO">
+	
+		<choose>
+			<when test='key.equals("금액")'>
+				<![CDATA[
+		select a.id, sum(a.pPrice) totalprice, sum(a.cnt) totalcnt, count(a.odNum) odNumRank, b.catename, DENSE_RANK() OVER(ORDER BY count(odNum) DESC) as rank
+		from order_view a Inner join member b on(a.id=b.id) 
+		where state in('결제완료') group by a.id, b.catename order by sum(a.pPrice) desc
+				]]>
+			</when>
+			<when test='key.equals("갯수")'>
+				<![CDATA[
+		select a.id, sum(a.pPrice) totalprice, sum(a.cnt) totalcnt, count(a.odNum) odNumRank, b.catename, DENSE_RANK() OVER(ORDER BY count(odNum) DESC) as rank
+		from order_view a Inner join member b on(a.id=b.id) 
+		where state in('결제완료') group by a.id, b.catename order by sum(a.pPrice) desc
+				]]>
+			</when>
+			<when test='key.equals("주문횟수")'>
+				<![CDATA[
+		select a.id, sum(a.pPrice) totalprice, sum(a.cnt) totalcnt, count(a.odNum) odNumRank, b.catename, DENSE_RANK() OVER(ORDER BY count(odNum) DESC) as rank
+		from order_view a Inner join member b on(a.id=b.id)
+		where state in('결제완료')
+		group by a.id, b.catename order by count(odNum) desc
+				]]>
+			</when>
+			<when test='key.equals("카테고리")'>
+				<![CDATA[
+		select b.catename,sum(a.cnt) totalcnt,sum(a.pPrice) totalprice,count(a.odnum) odNumRank
+		from order_view a inner join member b on(a.id=b.id)
+		group by b.catename order by sum(a.pPrice) desc
+				]]>
+			</when>
+		</choose>
+		
+	</select>
+	
+	<select id = "listAllMtm" resultType="com.pet.model.MtmVO">
+	<![CDATA[
+		select * from mtm order by indate desc
+	]]>
+	</select>
+
+	
 	<!-- 상품 수정 -->
 	<update id="modifyProduct">
 		update product
@@ -26,5 +69,25 @@
 			pImg = #{pImg}
 		where pNum = #{pNum}
 	</update>
+	
+	<select id="adminOrderList" resultType="com.pet.model.OrderDTO">
+		select * from order_view where ID like '%'||#{id}||'%' order by oNum desc
+	</select>
+	
+	<update id="updateFinishOrderResult">
+		update o_detail set state='배송완료' where odNum=#{odNum}
+	</update>
+	
+	<select id="cancelListOrder" resultType="com.pet.model.OrderDTO">
+		select * from order_view where ID like '%'||#{id}||'%' and state='취소요청' or state='취소완료' order by oNum desc
+	</select>
+	
+	<update id="updateOrderResult">
+		update o_detail set state='취소완료', result=3 where odNum=#{odNum}
+	</update>
+	
+	<select id="memberList" resultType="com.pet.model.MemberVO">
+		select * from member where name like '%'||#{name}||'%' order by name desc
+	</select>
 	
 </mapper>

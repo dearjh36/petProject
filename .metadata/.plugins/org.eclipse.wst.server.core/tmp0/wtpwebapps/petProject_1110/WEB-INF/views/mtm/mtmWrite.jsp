@@ -4,7 +4,7 @@
 	<article>
 		<h2>1:1 문의</h2>
 		<h3 id="mtm_h3">고객님 문의에 1:1 답변을 드립니다.</h3>
-		<form name="formm" method="post" action="MypetServlet?command=mtm_write">
+		<form name="formm" method="post">
 			<table id="cartList">
 				<tr>
 					<Td>제목</Td>
@@ -17,8 +17,7 @@
 			</table>
 			<div class="clear"></div>
 			<div id="mtm_ing" style="float: right">
-				<input type="button" value="쇼핑 계속하기" class="submit"
-					onclick="location.href='MypetServlet?command=index'">
+				<input type="button" value="쇼핑 계속하기" class="submit" onclick="location.href='/'">
 				<input type="reset" value="내용 지우기" class="cancel">
 				<input type="submit" value="글쓰기" class="submit" style="background-color:#373737; color:white;">
 			</div>

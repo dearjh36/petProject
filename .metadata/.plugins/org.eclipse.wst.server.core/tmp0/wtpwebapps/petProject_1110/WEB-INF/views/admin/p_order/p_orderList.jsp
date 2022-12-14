@@ -5,13 +5,13 @@
 <script type="text/javascript">
 	function go_order_save2() {
 		var count = 0;
-		if (document.frm.admin_state.length == undefined) {
-			if (document.frm.admin_state.checked == true) {
+		if (document.frm.state.length == undefined) {
+			if (document.frm.state.checked == true) {
 				count++;
 			}
 		} else {
-			for (var i = 0; i < document.frm.admin_state.length; i++) {
-				if (document.frm.admin_state[i].checked == true) {
+			for (var i = 0; i < document.frm.state.length; i++) {
+				if (document.frm.state[i].checked == true) {
 					count++;
 				}
 			}
@@ -19,13 +19,12 @@
 		if (count == 0) {
 			alert("주문처리할 항목을 선택해 주세요.");
 		} else {
-			document.frm.action = "MypetServlet?command=admin_order_save_finish";
+			document.frm.action = "/admin/p_order/state";
 			document.frm.submit();
 		}
 	}
 
 	function go_search1() {
-		document.frm.action = "MypetServlet?command=admin_order_list";
 		document.frm.submit();
 	}
 </script>
@@ -61,20 +60,20 @@
 					<td>${p_orderVO.pPrice}</td>
 					<td>${p_orderVO.cnt}</td>
 					<td><fmt:formatDate value="${p_orderVO.indate}" /></td>
-					<td>${p_orderVO.user_state}</td>
+					<td>${p_orderVO.state}</td>
 					<td><c:choose>
-							<c:when test='${p_orderVO.admin_state=="주문완료"}'>
+							<c:when test='${p_orderVO.state=="결제완료"}'>
 								<span style="font-weight: bold; color: black"> 
-								(<input	type="checkbox" name="admin_state" value="${p_orderVO.odNum}"> 배송완료) </span>
+								(<input	type="checkbox" name="state" value="${p_orderVO.odNum}"> 배송완료) </span>
 							</c:when>
-							<c:when test='${p_orderVO.admin_state=="취소요청"}'>
+							<c:when test='${p_orderVO.state=="취소요청"}'>
 								<span style="font-weithd: bold; color: red">취소 요청</span>
 								
 							</c:when>
-							<c:when test='${p_orderVO.admin_state=="배송완료"}'>
+							<c:when test='${p_orderVO.state=="배송완료"}'>
 								<span style="font-weithd: bold; color: green">배송완료</span>
 							</c:when>
-							<c:when test='${p_orderVO.admin_state=="취소완료"}'>
+							<c:when test='${p_orderVO.state=="취소완료"}'>
 								<span style="font-weithd: bold; color: black">취소 완료</span>
 							</c:when>
 						</c:choose></td>

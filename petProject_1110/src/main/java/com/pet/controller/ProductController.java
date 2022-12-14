@@ -3,6 +3,7 @@ package com.pet.controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,4 +44,12 @@ public class ProductController {
 
 	}
 
+	// 상품 검색하기
+	@RequestMapping(value = "/productList", method = RequestMethod.POST)
+	public void postProductSearch(HttpServletRequest req, Model model) throws Exception {
+		String pName = req.getParameter("searchValue");
+
+		List<ProductVO> productVo = pService.productName(pName);
+		model.addAttribute("ProductList", productVo);
+	}
 }

@@ -11,4 +11,10 @@
 	<select id="mtmList" resultType = "com.pet.model.MtmVO">
 		select * from mtm where id=#{id} order by qseq desc
 	</select>
+	
+	<insert id="mtmInsert">
+		<![CDATA[
+			insert into mtm (qseq, title, content, id) values(mtm_seq.nextval,#{title},#{content},#{id})
+		]]>
+	</insert>
 </mapper>

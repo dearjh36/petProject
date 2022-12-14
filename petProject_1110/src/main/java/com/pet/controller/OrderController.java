@@ -142,5 +142,16 @@ public class OrderController {
 		model.addAttribute("orderList", orderList);
 		model.addAttribute("totalPrice", totalPrice);
 	}
+	
+	// 주문 취소
+	@RequestMapping(value = "/mypage/orderCancel", method = RequestMethod.GET)
+	public String orderCancelGET(HttpServletRequest req) throws Exception{
+		int oNum=Integer.parseInt(req.getParameter("oNum"));
+		int odNum=Integer.parseInt(req.getParameter("odNum"));
+		
+		oService.orderCancel(odNum);
+		
+		return "redirect:/mypage/orderDetail?oNum="+oNum;
+	}
 
 }

@@ -67,3 +67,14 @@
 12월 13, 2022 16:57:25.07 [13204:12540:1213/165725.006:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 12월 13, 2022 16:57:25.07 [13204:12540:1213/165725.006:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
 12월 13, 2022 16:57:25.07 [13204:12540:1213/165725.006:ERROR:interface_endpoint_client.cc(694)] Message 1 rejected by interface blink.mojom.WidgetHost
+
+12월 14, 2022 05:10:35.816 NEW SESSION
+12월 14, 2022 05:10:35.816 [12156:2256:1214/051035.814:ERROR:device_event_log_impl.cc(215)] [05:10:35.815] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 14, 2022 05:11:33.351 [12156:12460:1214/051133.351:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+12월 14, 2022 06:55:33.59 [12156:2256:1214/065533.059:ERROR:device_event_log_impl.cc(215)] [06:55:33.059] USB: usb_service_win.cc:104 SetupDiGetDeviceProperty({{A45C254E-DF1C-4EFD-8020-67D146A850E0}, 6}) failed: 요소가 없습니다. (0x490)
+
+12월 14, 2022 10:44:07.212 NEW SESSION
+12월 14, 2022 10:44:07.212 [13104:1980:1214/104407.210:ERROR:device_event_log_impl.cc(215)] [10:44:07.210] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 14, 2022 10:44:07.212 [13104:1980:1214/104407.211:ERROR:device_event_log_impl.cc(215)] [10:44:07.211] USB: usb_device_handle_win.cc:1045 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+12월 14, 2022 10:45:03.998 [13104:4796:1214/104503.998:ERROR:util.cc(133)] Can't create base directory: C:\Program Files\Google\GoogleUpdater
+12월 14, 2022 10:46:45.977 INFO: Created TensorFlow Lite XNNPACK delegate for CPU.

@@ -39,6 +39,11 @@ public class OrderServiceImpl implements OrderService{
 	public List<Integer> ONumList(String id) throws Exception {
 		return oDao.ONumList(id);
 	}
+
+	@Override
+	public void orderCancel(int odNum) throws Exception {
+		oDao.orderCancel(odNum);
+	}
 	
 	
 

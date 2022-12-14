@@ -74,7 +74,7 @@ public class MemberController {
 	}
 
 	// 로그인 POST
-	@RequestMapping(value = "/member/login.do", method = RequestMethod.POST)
+	@RequestMapping(value = "/member/login", method = RequestMethod.POST)
 	public String postLogin(MemberVO memVO, HttpServletRequest req, RedirectAttributes rttr) throws Exception {
 		logger.info("get 로그인");
 

@@ -32,6 +32,13 @@ public class ProductServiceImpl implements ProductService {
 		return result;
 				
 	}
+
+	// 상품 이름 검색
+	@Override
+	public List<ProductVO> productName(String pName) throws Exception {
+		List<ProductVO> result = dao.productName(pName);
+		return result;
+	}
 	
 	// 전체 상품 목록 + 페이징
 	@Override

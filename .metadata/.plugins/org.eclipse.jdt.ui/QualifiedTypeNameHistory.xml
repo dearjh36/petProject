@@ -20,7 +20,6 @@
     <fullyQualifiedTypeName name="java.io.File"/>
     <fullyQualifiedTypeName name="com.pet.util.UploadFileUtils"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.HandlerInterceptor"/>
-    <fullyQualifiedTypeName name="com.pet.model.MemberVO"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseBody"/>
     <fullyQualifiedTypeName name="com.pet.dao.CartDao"/>
     <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
@@ -36,5 +35,8 @@
     <fullyQualifiedTypeName name="com.pet.util.UploadFileUtils2"/>
     <fullyQualifiedTypeName name="oracle.net.aso.r"/>
     <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.pet.model.MtmVO"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.pet.model.MemberVO"/>
+    <fullyQualifiedTypeName name="com.pet.service.QnaService"/>
 </qualifiedTypeNameHistroy>

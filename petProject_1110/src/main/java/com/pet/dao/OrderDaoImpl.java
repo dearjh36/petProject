@@ -48,4 +48,9 @@ public class OrderDaoImpl implements OrderDao {
 		return sql.selectList(namespace+".ONumList",id);
 	}
 
+	@Override
+	public void orderCancel(int odNum) throws Exception {
+		sql.update(namespace+".orderCancel",odNum);
+	}
+
 }

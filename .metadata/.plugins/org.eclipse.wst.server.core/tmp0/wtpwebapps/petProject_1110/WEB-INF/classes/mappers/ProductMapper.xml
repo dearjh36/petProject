@@ -94,4 +94,12 @@
 		]]>
 	</select>
 	
+	<select id="productName" resultType = "com.pet.model.ProductVO">
+		<![CDATA[
+		select * 
+		from product
+		where pName like '%' || #{pName} || '%'				
+		]]>
+	</select>
+	
 </mapper>

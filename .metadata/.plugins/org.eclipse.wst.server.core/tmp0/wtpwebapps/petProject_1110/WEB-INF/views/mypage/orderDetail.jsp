@@ -111,8 +111,7 @@ function goReviewUpdate(odNum,pNum){
 
 					<td><c:choose>
 							<c:when test="${orderVO.state=='결제완료'}">
-								<input type="button" value="주문취소" class="re_write_go"
-									onclick="goCancle('${orderVO.odNum}','${orderVO.state}')">
+								<input type="button" value="주문취소" class="re_write_go" onclick="goCancle('${orderVO.odNum}','${orderVO.state}')">
 							</c:when>
 							<c:when test="${orderVO.state=='취소요청'}">
                  				 취소 요청 중

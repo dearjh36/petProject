@@ -12,4 +12,7 @@ public interface QnaDao {
 	
 	// mtm 목록
 	public List<MtmVO> mtmList(String id) throws Exception;
+	
+	// mtm 삽입
+	public void mtmInsert(MtmVO vo) throws Exception;
 }

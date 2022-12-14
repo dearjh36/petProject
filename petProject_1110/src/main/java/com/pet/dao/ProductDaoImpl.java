@@ -29,6 +29,12 @@ public class ProductDaoImpl implements ProductDao {
 		return sql.selectList(namespace + ".productAllList");
 	}
 
+	// 상품 이름 검색
+	@Override
+	public List<ProductVO> productName(String pName) throws Exception {
+		return sql.selectList(namespace+".productName", pName);
+	}
+
 	// 전체 상품 목록 + 페이징
 	@Override
 	public List<ProductVO> productAllListPage(int displayPost) throws Exception {
@@ -72,6 +78,5 @@ public class ProductDaoImpl implements ProductDao {
 
 		return sql.selectList(namespace + ".productSearch", data);
 	}
-
 
 }

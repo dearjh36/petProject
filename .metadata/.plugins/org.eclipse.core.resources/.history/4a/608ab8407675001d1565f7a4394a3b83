@@ -1,7 +1,0 @@
-package com.pet.interceptor;
-
-import org.springframework.web.servlet.HandlerInterceptor;
-
-public class CartInterceptor implements HandlerInterceptor{
-	
-}
